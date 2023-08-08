@@ -16,11 +16,27 @@ public class ArrayDemo4 {
 	public static void main(String[] args) {
 		double[] stocks = {7.6, 3.9, 15.6, 28.3, 1.2, 10.8, 35.3, 45.6, 10.2, 0.5};
         double[] bonds  = {6.8, 7.2, 6.8, 7.5, 6.9, 7.9, 7.9, 7.1, 7.2};
-
-        double avgStocks = average(stocks);
-        double avgBonds = average(bonds);
-        System.out.printf("股票平均獲利率: %.1f%%\n", avgStocks);
-        System.out.printf("債券平均獲利率: %.1f%%\n", avgBonds);
+        
+        // 1.員工投資股票與公債的平均獲利率 ?
+        double avgStocks = average(stocks); // 股票平均獲利率
+        double avgBonds = average(bonds); // 債券平均獲利率
+        System.out.printf("股票平均獲利率: %.1f%%\n", avgStocks); 
+        System.out.printf("債券平均獲利率: %.1f%%\n", avgBonds); 
+        
+        // 2.員工投資股票與公債的獲利率變異係數 ?
+        double sdStocks = standardDeviation(stocks); // 股票獲利率標準差 SD
+        double sdBonds = standardDeviation(bonds);  // 債券獲利率標準差 SD
+        double cvStocks = cv(sdStocks, avgStocks); // 股票獲利率變異係數 CV
+        double cvBonds = cv(sdBonds, avgBonds); // 債券獲利率變異係數 CV
+        System.out.printf("股票獲利率變異係數: %.2f\n", cvStocks); 
+        System.out.printf("債券獲利率變異係數: %.2f\n", cvBonds); 
+        
+        // 3.請問哪一種投資(股票或公債)的獲利較集中 ?
+        if(cvStocks < cvBonds) {
+        	System.out.println("股票獲利較集中");
+        } else {
+        	System.out.println("債券獲利較集中");
+        }
 	}
 	
 	// 平均
