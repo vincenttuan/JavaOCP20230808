@@ -22,15 +22,14 @@ public class ArrayDemo5 {
 		double sdWeights = standardDeviation(weights); // 體重SD
 		double cvHeights = cv(sdHeights, avgHeight); // 身高CV
 		double cvWeights = cv(sdWeights, avgWeight); // 體重CV
-		System.out.printf("身高平均變異係數: %.1f\n", cvHeights);
-		System.out.printf("體重平均變異係數: %.1f\n", cvWeights);
+		System.out.printf("身高平均變異係數: %.3f\n", cvHeights);
+		System.out.printf("體重平均變異係數: %.3f\n", cvWeights);
 		
 		if(cvHeights > cvWeights) {
 			System.out.println("身高分散程度大");
 		} else {
 			System.out.println("體重分散程度大");
 		}
-		
 
 	}
 
