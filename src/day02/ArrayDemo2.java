@@ -10,6 +10,19 @@ public class ArrayDemo2 {
 		// 透過 Arrays.toString(一維陣列變數) 查看陣列內的內容
 		System.out.println(Arrays.toString(scores));
 		
+		// 逐筆印出每一個維度的內容
+		System.out.println(scores[0]);
+		System.out.println(scores[1]);
+		System.out.println(scores[2]);
+		System.out.println(scores[3]);
+		System.out.println(scores[4]);
+		// 計算總分(加總每一個維度的內容)
+		System.out.println(scores[0] + scores[1] + scores[2] + scores[3] + scores[4]);
+		
+		// 逐筆印出每一個維度的內容-使用 forloop
+		for(int i=0;i<scores.length;i++) {
+			System.out.println(scores[i]);
+		}
 		
 	}
 
