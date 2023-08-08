@@ -29,7 +29,9 @@ public class ArrayDemo2 {
 			sum += scores[i];
 		}
 		System.out.println(sum);
-			
+		// 請計算平均 = ?
+		int avg = sum / scores.length;
+		System.out.println(avg);
 	}
 
 }
