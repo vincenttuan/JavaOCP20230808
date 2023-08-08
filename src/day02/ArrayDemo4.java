@@ -23,6 +23,7 @@ public class ArrayDemo4 {
         System.out.printf("債券平均獲利率: %.1f%%\n", avgBonds);
 	}
 	
+	// 平均
 	public static double average(double[] array) {
 		double sum = 0, avg = 0;
 		for(int i=0;i<array.length;i++) {
@@ -30,6 +31,23 @@ public class ArrayDemo4 {
 		}
 		avg = sum / array.length;
 		return avg;
+	}
+	
+	// 標準差
+	public static double standardDeviation(double[] array) {
+		double avg = average(array);
+		double variance = 0;
+		for(int i=0;i<array.length;i++) {
+			variance += Math.pow(array[i] - avg, 2); 
+		}
+		double sd = Math.sqrt(variance/array.length); // 標準差 
+		return sd;
+	}
+	
+	// 變異係數
+	public static double cv(double sd, double avg) {
+		double cv = sd / avg;
+		return cv;
 	}
 	
 }
