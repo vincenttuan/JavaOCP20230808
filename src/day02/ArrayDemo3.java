@@ -12,10 +12,12 @@ public class ArrayDemo3 {
 		System.out.printf("B班成績 %s\n", Arrays.toString(scoresB));
 		// 印出 A, B 二班的總分與平均
 		int sumA = getSum(scoresA);
+		double avgA = getAvg(scoresA);
 		int sumB = getSum(scoresB);
-		System.out.printf("A班總分 %d\n", sumA);
-		System.out.printf("B班總分 %d\n", sumB);
+		double avgB = getAvg(scoresB);
 		
+		System.out.printf("A班總分 %d A班平均 %.1f\n", sumA, avgA);
+		System.out.printf("B班總分 %d B班平均 %.1f\n", sumB, avgB);
 	}
 	
 	// 1.請寫一個方法能夠得到 int[] 的總分
@@ -28,6 +30,11 @@ public class ArrayDemo3 {
 	}
 	
 	// 2.請寫一個方法能夠得到 int[] 的平均
-	
+	public static double getAvg(int[] scores) {
+		int sum = getSum(scores);
+		double lens = scores.length;
+		double avg = sum / lens;
+		return avg;
+	}
 	
 }
