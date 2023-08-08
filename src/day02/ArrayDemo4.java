@@ -17,7 +17,19 @@ public class ArrayDemo4 {
 		double[] stocks = {7.6, 3.9, 15.6, 28.3, 1.2, 10.8, 35.3, 45.6, 10.2, 0.5};
         double[] bonds  = {6.8, 7.2, 6.8, 7.5, 6.9, 7.9, 7.9, 7.1, 7.2};
 
-
+        double avgStocks = average(stocks);
+        double avgBonds = average(bonds);
+        System.out.printf("股票平均獲利率: %.1f%%\n", avgStocks);
+        System.out.printf("債券平均獲利率: %.1f%%\n", avgBonds);
 	}
-
+	
+	public static double average(double[] array) {
+		double sum = 0, avg = 0;
+		for(int i=0;i<array.length;i++) {
+			sum += array[i];
+		}
+		avg = sum / array.length;
+		return avg;
+	}
+	
 }
