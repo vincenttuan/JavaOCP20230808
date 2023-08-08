@@ -2,8 +2,6 @@ package day02;
 
 import java.util.Arrays;
 
-import javax.sound.midi.Soundbank;
-
 public class ArrayDemo2 {
 
 	public static void main(String[] args) {
