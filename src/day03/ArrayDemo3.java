@@ -28,5 +28,9 @@ public class ArrayDemo3 {
 			
 		});
 		
+		Arrays.stream(scores)
+			  .filter(x -> x >= 60 && x <= 100)
+			  .forEach(x -> System.out.println(x));
+		
 	}
 }
