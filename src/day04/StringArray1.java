@@ -18,7 +18,9 @@ public class StringArray1 {
 			System.out.println(x.length());
 		}
 		
-		
-		
+		// 使用 Java Stream 
+		Arrays.stream(names)
+			  .mapToInt(x -> x.length())
+			  .forEach(x -> System.out.println(x));
 	}
 }
