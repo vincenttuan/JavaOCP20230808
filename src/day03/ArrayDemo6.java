@@ -6,7 +6,11 @@ public class ArrayDemo6 {
 
 	public static void main(String[] args) {
 		int[] scores = {40, 90, 70, 100, 60};
-		// 取得最高分, 最低分, 總分, 平均, 個數
+		
+		/*****************************************
+		 * 取得最高分, 最低分, 總分, 平均, 個數
+		 *****************************************/
+		
 		int maxScore = Arrays.stream(scores).max().getAsInt(); // 最高分
 		int minScore = Arrays.stream(scores).min().getAsInt(); // 最低分
 		int sum      = Arrays.stream(scores).sum(); // 總分
