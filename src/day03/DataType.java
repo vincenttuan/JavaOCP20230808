@@ -10,7 +10,8 @@ public class DataType {
 		System.out.printf("c1 = %c\n", c1);
 		System.out.printf("c2 = %c\n", c2);
 		System.out.printf("c1 == c2 ? %b\n", (c1 == c2));
-
+		
+		
 	}
 
 }
