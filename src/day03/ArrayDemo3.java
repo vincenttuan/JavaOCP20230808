@@ -32,5 +32,11 @@ public class ArrayDemo3 {
 			  .filter(x -> x >= 60 && x <= 100)
 			  .forEach(x -> System.out.println(x));
 		
+		
+		Arrays.stream(scores)
+			  .filter(x -> x >= 60)
+			  .filter(x -> x <= 100)
+			  .forEach(x -> System.out.println(x));
+		
 	}
 }
