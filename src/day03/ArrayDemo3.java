@@ -20,12 +20,13 @@ public class ArrayDemo3 {
 			}
 		}
 		
-		Arrays.stream(scores)
-			  .forEach(x -> {
-				  if(x >= 60 && x <= 100) {
-					  System.out.println(x);
-				  }
-			  });
+		Arrays.stream(scores).forEach(x -> {
+			
+			if(x >= 60 && x <= 100) {
+				System.out.println(x);
+			}
+			
+		});
 		
 	}
 }
