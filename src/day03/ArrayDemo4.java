@@ -1,5 +1,7 @@
 package day03;
 
+import java.util.Arrays;
+
 public class ArrayDemo4 { // begin
 	
 	public static void main(String[] args) { // main-begin
@@ -23,6 +25,15 @@ public class ArrayDemo4 { // begin
 			}
 		}
 		System.out.printf("總和:%d\n", sum2);
+		
+		Arrays.stream(values)
+			  .filter(x -> x % 2 == 0)
+			  .forEach(x -> System.out.println(x));
+		
+		int sum3 = Arrays.stream(values)
+						 .filter(x -> x % 2 == 0)
+						 .sum();
+		System.out.printf("總和:%d\n", sum3);
 		
 	} // main-end
 	
