@@ -19,6 +19,9 @@ public class ArrayDemo1 {
 		for(int x : scores) {
 			System.out.println(x);
 		}
+		// 4. 透過 Java Stream(串流) 的 forEach 依序印出元素內容
+		System.out.println("4. 透過 Java Stream(串流) 的 forEach 依序印出元素內容");
+		Arrays.stream(scores).forEach(x -> System.out.println(x));
 	}
 
 }
