@@ -11,5 +11,9 @@ public class StringArray1 {
 		for(int i=0;i<names.length;i++) {
 			System.out.println(names[i].length());
 		}
+		
+		for(String x : names) {
+			System.out.println(x.length());
+		}
 	}
 }
