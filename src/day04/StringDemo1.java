@@ -14,7 +14,9 @@ public class StringDemo1 {
 		System.out.println(s3.equals(s4)); // true
 		System.out.println(s2.equals(s3)); // true
 		System.out.println(s1.equals(s4)); // true
-
+		
+		// 字串取得長度 length()
+		System.out.println(s1.length());
 	}
 
 }
