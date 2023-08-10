@@ -10,7 +10,15 @@ public class StringArray3 {
 		int[]    amounts = {10, 20, 30, 40};
 		
 		// 問總共買了幾個 apple ?
+		int appleAmount = 0; // 蘋果累加的數量
+		for(int i=0;i<fruits.length;i++) {
+			
+			if(fruits[i].equals("apple")) {
+				appleAmount += amounts[i];
+			}
+			
+		}
 		
-		
+		System.out.println(appleAmount);
 	}
 }
