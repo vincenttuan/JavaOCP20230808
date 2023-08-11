@@ -15,7 +15,7 @@ public class MultiArray1 {
 		
 		int productNo = 1001;
 		int qty = 10;
-		System.out.printf("銷售 商品編號 %d 數量 %d 個\n", 1001, qty);
+		System.out.printf("銷售 商品編號 %d 數量 %d 個\n", productNo, qty);
 		int idx = 0;
 		switch (productNo) {
 			case 1001:
