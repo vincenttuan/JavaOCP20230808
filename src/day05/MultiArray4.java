@@ -12,6 +12,7 @@ public class MultiArray4 {
 		System.out.println(allScores[1][1]);
 		System.out.println(allScores[1][2]);
 		
+		// for-loop
 		for(int i=0;i<2;i++) {
 			for(int k=0;k<3;k++) {
 				System.out.println(allScores[i][k]);
@@ -23,6 +24,8 @@ public class MultiArray4 {
 				System.out.println(allScores[i][k]);
 			}
 		}
+		
+		
 		
 	}
 }
