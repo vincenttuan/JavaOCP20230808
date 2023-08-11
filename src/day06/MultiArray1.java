@@ -19,6 +19,7 @@ public class MultiArray1 {
 		
 		printInvestory(investories);
 		
+		
 	}
 	
 	// 印出庫存資料
