@@ -8,13 +8,19 @@ public class MultiArray5 {
 		// for-each
 		// 求總分 = ?
 		int sum = 0;
+		int count = 0;
+		//----------------------------------------------
 		for(int[] scores : allScores) { // 分析二維陣列
 			for(int x : scores) { // 分析一維陣列
 				System.out.println(x);
 				sum += x;
+				count++;
 			}
 		}
+		//----------------------------------------------
 		System.out.println(sum);
+		double avg = (double)sum / count;
+		System.out.printf("%.1f\n", avg);
 	}
 
 }
