@@ -14,8 +14,18 @@ public class MultiArray1 {
 		printInvestory(investories);
 		
 		// 進行銷售 -----------------------------------------------------
-		int productNo = 1003;
-		int qty = 10;
+		sales(investories, 1001, 10);
+		sales(investories, 1002, 5);
+		sales(investories, 1001, 2);
+		sales(investories, 1003, 14);
+		// ------------------------------------------------------------
+		
+		// 列印庫存
+		printInvestory(investories);
+	}
+	
+	// 銷售
+	public static void sales(int[][] investories, int productNo, int qty) {
 		System.out.printf("銷售 商品編號 %d 數量 %d 個\n", productNo, qty);
 		int idx = 0;
 		switch (productNo) {
@@ -30,9 +40,6 @@ public class MultiArray1 {
 				break;
 		}
 		investories[idx][1] = investories[idx][1] - qty;
-		// ------------------------------------------------------------
-		// 列印庫存
-		printInvestory(investories);
 	}
 	
 	// 印出庫存資料
