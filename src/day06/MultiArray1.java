@@ -11,6 +11,10 @@ public class MultiArray1 {
 				{1003, 15}  // 商品編號 1003, 庫存量 15
 		};
 		printInvestory(investories);
+		// 銷售 商品編號 1001 數量 10 個
+		System.out.println("銷售 商品編號 1001 數量 10 個");
+		investories[0][1] = investories[0][1] - 10;
+		printInvestory(investories);
 	}
 	
 	// 印出庫存資料
