@@ -11,9 +11,24 @@ public class MultiArray1 {
 				{1003, 15}  // 商品編號 1003, 庫存量 15
 		};
 		printInvestory(investories);
-		// 銷售 商品編號 1001 數量 10 個
-		System.out.println("銷售 商品編號 1001 數量 10 個");
-		investories[0][1] = investories[0][1] - 10;
+		
+		
+		int productNo = 1001;
+		int qty = 10;
+		System.out.printf("銷售 商品編號 %d 數量 %d 個\n", 1001, qty);
+		int idx = 0;
+		switch (productNo) {
+			case 1001:
+				idx = 0;
+				break;
+			case 1002:
+				idx = 1;
+				break;
+			case 1003:
+				idx = 2;
+				break;
+		}
+		investories[idx][1] = investories[idx][1] - qty;
 		printInvestory(investories);
 	}
 	
