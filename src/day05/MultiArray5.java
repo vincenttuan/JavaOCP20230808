@@ -8,8 +8,8 @@ public class MultiArray5 {
 		// for-each
 		// 求總分 = ?
 		int sum = 0;
-		for(int[] scores :allScores) {
-			for(int x : scores) {
+		for(int[] scores : allScores) { // 分析二維陣列
+			for(int x : scores) { // 分析一維陣列
 				System.out.println(x);
 				sum += x;
 			}
