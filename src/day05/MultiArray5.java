@@ -18,7 +18,7 @@ public class MultiArray5 {
 			}
 		}
 		//----------------------------------------------
-		System.out.println(sum);
+		System.out.printf("%d\n", sum);
 		double avg = (double)sum / count;
 		System.out.printf("%.1f\n", avg);
 	}
