@@ -10,10 +10,11 @@ public class MultiArray1 {
 				{1002, 30}, // 商品編號 1002, 庫存量 30
 				{1003, 15}  // 商品編號 1003, 庫存量 15
 		};
+		// 列印庫存
 		printInvestory(investories);
 		
-		
-		int productNo = 1001;
+		// 進行銷售 -----------------------------------------------------
+		int productNo = 1003;
 		int qty = 10;
 		System.out.printf("銷售 商品編號 %d 數量 %d 個\n", productNo, qty);
 		int idx = 0;
@@ -29,6 +30,8 @@ public class MultiArray1 {
 				break;
 		}
 		investories[idx][1] = investories[idx][1] - qty;
+		// ------------------------------------------------------------
+		// 列印庫存
 		printInvestory(investories);
 	}
 	
