@@ -50,12 +50,19 @@ public class MyATM3 {
 	
 	// 餘額查詢
 	public static void checkBalance() {
-		
+		System.out.printf("目前帳戶餘額 $%d\n", sysBalance);
 	}
 	
 	// 提款
 	public static void withdraw() {
-		
+		System.out.print("請輸入提款金額:");
+		int withdrawAmount = sc.nextInt();
+		if(withdrawAmount > sysBalance) {
+			System.out.println("餘額不足");
+			return; // 方法到此結束
+		}
+		sysBalance -= withdrawAmount; // 變更帳戶餘額
+		System.out.printf("已提款 $%d 成功, 帳戶餘額 $%d\n", withdrawAmount, sysBalance);
 	}
 	
 	// 存款
