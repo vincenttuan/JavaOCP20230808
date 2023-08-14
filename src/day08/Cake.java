@@ -10,6 +10,12 @@ public class Cake {
 		
 	}
 	
+	Cake(String name, int price, double sweetness) {
+		setName(name);
+		setPrice(price);
+		setSweetness(sweetness);
+	}
+	
 	// 設定名稱的方法
 	void setName(String name) {
 		if(name != null && name.length() >= 2) {
