@@ -31,7 +31,7 @@ public class MyATM2 {
 					System.out.printf("目前餘額 $%d\n", sysBalance);
 					break;
 				case 2: // 提款
-					System.out.print("請輸入提款金額");
+					System.out.print("請輸入提款金額:");
 					int withdrawAmount = sc.nextInt();
 					if(withdrawAmount > sysBalance) {
 						System.out.println("餘額不足");
