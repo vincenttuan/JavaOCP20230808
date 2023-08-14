@@ -10,6 +10,10 @@ public class Drink {
 	}
 	
 	void drink() { // 喝飲料的方法 (物件方法)
-		System.out.printf("喝 %s 的方法是打開蓋子就喝\n", name);
+		if(price >= 20) {
+			System.out.printf("喝 %s 的方法是打開蓋子就喝\n", name);
+		} else {
+			System.out.printf("喝 %s 的方法是插上吸管才喝\n", name);
+		}
 	}
 }
