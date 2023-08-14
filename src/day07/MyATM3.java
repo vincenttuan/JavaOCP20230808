@@ -59,7 +59,7 @@ public class MyATM3 {
 		int withdrawAmount = sc.nextInt();
 		if(withdrawAmount > sysBalance) {
 			System.out.println("餘額不足");
-			return; // 方法到此結束
+			return; // 提款方法到此結束
 		}
 		sysBalance -= withdrawAmount; // 變更帳戶餘額
 		System.out.printf("已提款 $%d 成功, 帳戶餘額 $%d\n", withdrawAmount, sysBalance);
@@ -67,12 +67,20 @@ public class MyATM3 {
 	
 	// 存款
 	public static void deposit() {
-		
+		System.out.print("請輸入存款金額:");
+		int depositAmount = sc.nextInt();
+		if(depositAmount < 0) {
+			System.out.println("存款金額不可以 < 0");
+			return; // 存款方法到此結束
+		}
+		sysBalance += depositAmount; // 變更帳戶餘額
+		System.out.printf("已存款 $%d 成功, 帳戶餘額 $%d\n", depositAmount, sysBalance);
 	}
 	
 	// 離開系統
 	public static void quit() {
-		
+		System.out.println("感謝使用, 再見");
+		System.exit(0); // 0: 表示正常中止, 1: 表示異常中止
 	}
 	
 }
