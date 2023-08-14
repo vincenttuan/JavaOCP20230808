@@ -25,7 +25,7 @@ public class MyATM {
 			if(userAmount > sysBalance) {
 				System.out.println("帳戶餘額不足");
 				// 4.1 是否要繼續提款
-				System.out.println("是否要繼續提款(1:繼續 0:離開)?");
+				System.out.print("是否要繼續提款(1:繼續 0:離開)?");
 				int check = sc.nextInt(); // 得到使用者所輸入的是 1 或是 0
 				if(check == 1) {
 					continue; 
@@ -37,7 +37,7 @@ public class MyATM {
 			sysBalance = sysBalance - userAmount;
 			System.out.printf("提款 $%d 成功, 帳戶餘額 $%d\n", userAmount, sysBalance);
 			// 6. 是否繼續提款
-			System.out.println("是否要繼續提款(1:繼續 0:離開)?");
+			System.out.print("是否要繼續提款(1:繼續 0:離開)?");
 			int check = sc.nextInt(); // 得到使用者所輸入的是 1 或是 0
 			if(check == 1) {
 				continue; 
