@@ -10,6 +10,11 @@ public class Drink {
 		
 	}
 	
+	Drink(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+	
 	void display() { // 顯示飲料名稱與價格的方法 (物件方法)
 		System.out.printf("名稱: %s 價格 $%d\n", name, price);
 	}
