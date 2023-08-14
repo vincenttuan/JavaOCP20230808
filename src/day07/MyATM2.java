@@ -30,7 +30,7 @@ public class MyATM2 {
 				case 1: // 查詢餘額
 					System.out.printf("目前餘額 $%d\n", sysBalance);
 					break;
-				case 2: // 提款
+				case 2: // 提款 (withdrawAmount)
 					System.out.print("請輸入提款金額:");
 					int withdrawAmount = sc.nextInt();
 					if(withdrawAmount > sysBalance) {
@@ -40,7 +40,7 @@ public class MyATM2 {
 					sysBalance -= withdrawAmount; // 變更帳戶餘額
 					System.out.printf("已提款 $%d 成功, 帳戶餘額 $%d\n", withdrawAmount, sysBalance);
 					break;	
-				case 3: // 存款
+				case 3: // 存款 (depositAmount)
 					
 					
 					
