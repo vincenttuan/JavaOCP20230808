@@ -22,7 +22,6 @@ public class Cake {
 		if(price >= 10 && price <= 1000) {
 			this.price = price;
 		}
-		
 	}
 	
 	// 設定甜度的方法
