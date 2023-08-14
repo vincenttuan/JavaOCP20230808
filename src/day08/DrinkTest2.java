@@ -11,7 +11,8 @@ public class DrinkTest2 {
 		
 		Drink tea = new Drink("綠茶", 10);
 		
-		
+		coca.display();
+		tea.display();
 	}
 
 }
