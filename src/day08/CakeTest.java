@@ -11,6 +11,9 @@ public class CakeTest {
 		
 		Cake cheese = new Cake("起司蛋糕", 70, 90.5);
 		cheese.display();
+		
+		Cake cake = new Cake("糕", -50, 700.0);
+		cake.display();
 	}
 
 }

@@ -38,6 +38,17 @@ public class Cake {
 	}
 	
 	void display() {
-		System.out.printf("%s $%d %.1f%%\n", name, price, sweetness);
+		// 判斷 name, price, sweetness 是否符合限制
+		if(name != null && name.length() >= 2 &&
+		   price >= 10 && price <= 1000 &&
+		   sweetness >= 0 && sweetness <= 100) {
+			
+			System.out.printf("%s $%d %.1f%%\n", name, price, sweetness);
+			
+		} else {
+			System.out.println("無此商品");
+		}
+		
+		
 	}
 }
