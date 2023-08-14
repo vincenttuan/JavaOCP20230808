@@ -41,9 +41,14 @@ public class MyATM2 {
 					System.out.printf("已提款 $%d 成功, 帳戶餘額 $%d\n", withdrawAmount, sysBalance);
 					break;	
 				case 3: // 存款 (depositAmount)
-					
-					
-					
+					System.out.print("請輸入存款金額:");
+					int depositAmount = sc.nextInt();
+					if(depositAmount < 0) {
+						System.out.println("存款金額不可以 < 0");
+						continue;
+					}
+					sysBalance += depositAmount; // 變更帳戶餘額
+					System.out.printf("已存款 $%d 成功, 帳戶餘額 $%d\n", depositAmount, sysBalance);
 					break;
 				case 4: // 退出(退出迴圈)
 					System.out.println("感謝使用, 再見");
