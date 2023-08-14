@@ -45,7 +45,8 @@ public class MyATM {
 				break; // 離開迴圈
 			}
 		}
-
+		
+		System.out.println("程式結束 !");
 	}
 
 }
