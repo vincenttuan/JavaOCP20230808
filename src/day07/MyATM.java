@@ -3,7 +3,7 @@ package day07;
 import java.util.Scanner;
 
 public class MyATM {
-
+	// 請寫一個提款的 ATM
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in); // 可以得到使用者在鍵盤上所輸入的資料
 		int sysPin = 1234; // 系統密碼
