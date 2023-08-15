@@ -17,14 +17,33 @@ public class CoffeeTest2 {
 		
 		// 分析
 		// 1. 總銷售額
+		// 2. 平均價
+		// 3. 大中小杯的數量
 		int totalSales = 0;
+		int smallCount = 0, mediumCount = 0, largeCount = 0;
 		for(Coffee coffee : coffees) {
 			// 印出每一杯咖啡的價格
-			System.out.printf("%-12s $%-3d\n", coffee.getName(), coffee.getPrice());
+			System.out.printf("%-12s $%3d\n", coffee.getName(), coffee.getPrice());
+			// 累計計算銷售總額
 			totalSales += coffee.getPrice();
+			// 累計大中小杯的數量
+			switch (coffee.getSize()) {
+				case "LARGE":
+					largeCount++;
+					break;
+				case "MEDIUM":
+					mediumCount++;
+					break;	
+				case "SMALL":
+					smallCount++;
+					break;	
+			}
 		}
 		System.out.println("-----------------");
-		System.out.printf("%-12s $%-3d\n", "Total sales", totalSales);
+		System.out.printf("%-12s $%3d\n", "Total sales", totalSales);
+		System.out.printf("%-12s $%3d\n", "Average", totalSales/cups);
+		System.out.printf("L:%-2d M:%-2d S:%-2d\n", largeCount, mediumCount, smallCount);
+		
 	}
 
 }
