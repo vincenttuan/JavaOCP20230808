@@ -22,6 +22,7 @@ public class CoffeeTest2 {
 		// 4. 冷熱的數量
 		// 5. 最昂貴的咖啡名稱與價格
 		// 6. 最便宜的咖啡名稱與價格
+		// 7. 有那些咖啡的價格超過平均價(請顯示名稱與價格)
 		int totalSales = 0;
 		int smallCount = 0, mediumCount = 0, largeCount = 0;
 		int hotCount = 0, coldCount = 0;
