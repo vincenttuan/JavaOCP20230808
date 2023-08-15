@@ -1,6 +1,6 @@
 package day10;
 
-public class IPhone {
+public class IPhone extends Mobile {
 	private boolean hasFaceId;
 	private int iosVersion; // 10, 11
 	

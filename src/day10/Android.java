@@ -1,6 +1,6 @@
 package day10;
 
-public class Android {
+public class Android extends Mobile {
 	private boolean hasSD; // 是否有 SD 卡
 	private double androidVersion; // 8.1, 8.2
 	
