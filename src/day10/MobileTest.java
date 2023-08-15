@@ -27,7 +27,7 @@ public class MobileTest {
 		System.out.printf("容量: %d G ", iphone.getStorage());
 		System.out.printf("價格: $%d ", iphone.getPrice());
 		System.out.printf("FaceId: %b ", iphone.isHasFaceId());
-		System.out.printf("版本: %.1f\n", iphone.getIosVersion());
+		System.out.printf("版本: %d\n", iphone.getIosVersion());
 		
 
 	}
