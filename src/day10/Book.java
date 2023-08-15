@@ -40,9 +40,22 @@ public class Book {
 	public double getSalePrice() {
 		return salePrice;
 	}
-	public void setSalePrice(double salePrice) {
-		this.salePrice = salePrice;
+	
+	// 自訂設定售價邏輯
+	public void setSalePrice() {
+		switch (kind) {
+			case 1:
+				salePrice = price * 0.7;
+				break;
+			case 2:
+				salePrice = price * 0.9;
+				break;
+			case 3:
+				salePrice = price;
+				break;
+		}
 	}
+	
 	public int getAmount() {
 		return amount;
 	}
