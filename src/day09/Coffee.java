@@ -9,11 +9,52 @@ public class Coffee {
 	private String temperature; // HOT, COLD
 	
 	public Coffee(String name, String size, String temperature) {
-		
+		this.name = name;
+		this.size = size;
+		this.temperature = temperature;
+		setPrice(); // 根據上述的物件屬性來設定價格
 	}
 	
 	// 品名, 大中小, 冷熱 來決定
 	private void setPrice() {
+		// 建立咖啡基礎(小杯)價格
+		switch (name) {
+			case "拿鐵":
+			case "Latte": // 拿鐵
+				price = 50;
+				break;
+			case "濃縮":
+			case "Espresso": // 濃縮
+				price = 30;
+				break;
+			case "卡布奇諾":
+			case "Cappuccino": // 卡布奇諾
+				price = 45;
+				break;
+			default: // 其他
+				price = 40;
+				break;
+		}
+		
+		// 根據大中杯調整價格
+		switch (size) {
+			case "大": 
+			case "LARGE":
+				price += 25; // 大杯加價 +25
+				break;
+			case "中": 
+			case "MEDIUM":
+				price += 10; // 中杯加價 +10
+				break;
+		}
+		
+		// 冰+5元
+		switch (temperature) {
+			case "冰":
+			case "COLD":
+				price += 5; // 冰加價 +5
+				break;
+		}
 		
 	}
 	
