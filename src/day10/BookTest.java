@@ -19,6 +19,11 @@ public class BookTest {
 		System.out.printf("數量: %d\n", book.getAmount());
 		
 		book.display();
+		
+		// 參數: name, author, kind, price, amount
+		Book book2 = new Book("台灣通志", "Bob", 1, 200, 3);
+		book2.display();
+		
 	}
 
 }
