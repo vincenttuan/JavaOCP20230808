@@ -11,7 +11,9 @@ public class CoffeeTest2 {
 		Coffee macchiate = new Coffee("Macchiate", "MEDIUM", "HOT"); // 瑪奇朵
 		Coffee flatWhite = new Coffee("FlatWhite", "SMALL", "HOT"); // 白咖啡
 		
-		
+		Coffee[] coffees = {latte, espresso, mocha, cappuccino, americano, macchiate, flatWhite};
+		int cups = coffees.length;
+		System.out.printf("總共有 %d 杯\n", cups);
 	}
 
 }
