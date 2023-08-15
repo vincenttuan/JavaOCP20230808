@@ -13,6 +13,19 @@ public class Book {
 	private double salePrice; // 售價 
 	private int amount = 1; // 數量
 	
+	public Book() {
+		
+	}
+	
+	public Book(String name, String author, int kind, int price, int amount) {
+		this.name = name;
+		this.author = author;
+		this.kind = kind;
+		this.price = price;
+		this.amount = amount;
+		setSalePrice();
+	}
+
 	public String getName() {
 		return name;
 	}
