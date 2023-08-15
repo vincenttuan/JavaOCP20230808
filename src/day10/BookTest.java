@@ -6,7 +6,7 @@ public class BookTest {
 		Book book = new Book();
 		book.setName("Java程式設計");
 		book.setAuthor("Helen");
-		book.setKind(2); // 2:技術類
+		book.setKind(2); // 1:文學類, 2:技術類, 3:小說類
 		book.setPrice(100);
 		book.setSalePrice(); // 設定售價
 		book.setAmount(2);
@@ -18,6 +18,7 @@ public class BookTest {
 		System.out.printf("售價: %.1f\n", book.getSalePrice());
 		System.out.printf("數量: %d\n", book.getAmount());
 		
+		book.display();
 	}
 
 }

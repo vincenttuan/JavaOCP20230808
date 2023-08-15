@@ -63,5 +63,14 @@ public class Book {
 		this.amount = amount;
 	}
 	
+	public void display() {
+		System.out.printf("書名: %s ", name);
+		System.out.printf("作者: %s ", author);
+		System.out.printf("類型: %d ", kind);
+		System.out.printf("定價: %d ", price);
+		System.out.printf("售價: %.1f ", salePrice);
+		System.out.printf("數量: %d ", amount);
+		System.out.printf("小計: %.1f\n", (amount * salePrice));
+	}
 	
 }
