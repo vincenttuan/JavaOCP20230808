@@ -19,8 +19,10 @@ public class CoffeeTest2 {
 		// 1. 總銷售額
 		// 2. 平均價
 		// 3. 大中小杯的數量
+		// 4. 冷熱的數量
 		int totalSales = 0;
 		int smallCount = 0, mediumCount = 0, largeCount = 0;
+		int hotCount = 0, coldCount = 0;
 		for(Coffee coffee : coffees) {
 			// 印出每一杯咖啡的價格
 			System.out.printf("%-12s $%3d\n", coffee.getName(), coffee.getPrice());
@@ -38,11 +40,21 @@ public class CoffeeTest2 {
 					smallCount++;
 					break;	
 			}
+			// 累計冷熱的數量
+			switch (coffee.getTemperature()) {
+				case "HOT":
+					hotCount++;
+					break;
+				case "COLD":
+					coldCount++;
+					break;
+			}
 		}
 		System.out.println("-----------------");
 		System.out.printf("%-12s $%3d\n", "Total sales", totalSales);
 		System.out.printf("%-12s $%3d\n", "Average", totalSales/cups);
 		System.out.printf("L:%-2d M:%-2d S:%-2d\n", largeCount, mediumCount, smallCount);
+		System.out.printf("COLD:%-2d HOT:%-2d\n", coldCount, hotCount);
 		
 	}
 
