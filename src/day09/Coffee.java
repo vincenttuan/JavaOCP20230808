@@ -40,6 +40,7 @@ public class Coffee {
 	// 方法封裝 setters
 	public void setName(String name) {
 		this.name = name;
+		setPrice(); // 重新設定價格
 	}
 	
 	public void setAmount(int amount) {
