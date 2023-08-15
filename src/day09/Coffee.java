@@ -102,7 +102,7 @@ public class Coffee {
 	}
 	
 	public void display() {
-		System.out.printf("%s %s %s $%d\n", size, temperature, name, price);
+		System.out.printf("%s %s %s 單價:$%d 數量:%d 小計:%d\n", size, temperature, name, price, amount, (price*amount));
 	}
 	
 }
