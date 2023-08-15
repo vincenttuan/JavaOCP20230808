@@ -7,13 +7,24 @@ public class CoffeeTest2 {
 		Coffee espresso   = new Coffee("Espresso", "MEDIUM", "HOT"); // 濃縮
 		Coffee mocha      = new Coffee("Mocha", "SMALL", "COLD"); // 摩卡
 		Coffee cappuccino = new Coffee("Cappuccino", "LARGE", "HOT"); // 卡布奇諾
-		Coffee americano  = new Coffee("AmericanCoffee", "LARGE", "COLD"); // 美式
+		Coffee americano  = new Coffee("American", "LARGE", "COLD"); // 美式
 		Coffee macchiate  = new Coffee("Macchiate", "MEDIUM", "HOT"); // 瑪奇朵
 		Coffee flatWhite  = new Coffee("FlatWhite", "SMALL", "HOT"); // 白咖啡
 		
 		Coffee[] coffees = {latte, espresso, mocha, cappuccino, americano, macchiate, flatWhite};
 		int cups = coffees.length;
 		System.out.printf("總共有 %d 杯\n", cups);
+		
+		// 分析
+		// 1. 總銷售額
+		int totalSales = 0;
+		for(Coffee coffee : coffees) {
+			// 印出每一杯咖啡的價格
+			System.out.printf("%-12s $%-3d\n", coffee.getName(), coffee.getPrice());
+			totalSales += coffee.getPrice();
+		}
+		System.out.println("-----------------");
+		System.out.printf("%-12s $%-3d\n", "Total sales", totalSales);
 	}
 
 }
