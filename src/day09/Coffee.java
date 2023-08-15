@@ -7,7 +7,7 @@ public class Coffee {
 	private int price; // 價格會根據品名, 大中小, 冷熱 來決定
 	private String size; // SMALL, MEDIUM, LARGE
 	private String temperature; // HOT, COLD
-	
+	private int amount = 1; // 預設 = 1
 	// 建構子封裝
 	public Coffee(String name, String size, String temperature) {
 		this.name = name;
@@ -17,6 +17,10 @@ public class Coffee {
 	}
 	
 	// 方法封裝 getters
+	public int getAmount() {
+		return amount;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -34,6 +38,12 @@ public class Coffee {
 	}
 	
 	// 方法封裝 setters
+	public void setAmount(int amount) {
+		if(amount > 0) {
+			this.amount = amount;
+		}
+	}
+	
 	public void setSize(String size) {
 		this.size = size;
 		setPrice(); // 重新設定價格
