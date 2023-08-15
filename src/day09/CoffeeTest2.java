@@ -24,6 +24,7 @@ public class CoffeeTest2 {
 		// 6. 最便宜的咖啡名稱與價格
 		// 7. 有那些咖啡的價格超過平均價(請顯示名稱與價格)
 		int totalSales = 0;
+		int average = 0;
 		int smallCount = 0, mediumCount = 0, largeCount = 0;
 		int hotCount = 0, coldCount = 0;
 		Coffee mostExpensive = coffees[0];
@@ -65,15 +66,25 @@ public class CoffeeTest2 {
 			}
 			
 		}
+		average = totalSales/cups;
 		System.out.println("-----------------");
 		System.out.printf("%-12s $%3d\n", "Total sales", totalSales);
-		System.out.printf("%-12s $%3d\n", "Average", totalSales/cups);
+		System.out.printf("%-12s $%3d\n", "Average", average);
 		System.out.println("-----------------");
 		System.out.printf("L:%-2d M:%-2d S:%-2d\n", largeCount, mediumCount, smallCount);
 		System.out.printf("COLD:%-2d HOT:%-2d\n", coldCount, hotCount);
 		System.out.println("----------------------------------");
 		System.out.printf("Most Expensive: %-12s $%3d\n", mostExpensive.getName(), mostExpensive.getPrice());
 		System.out.printf("Cheapest:       %-12s $%3d\n", cheapest.getName(), cheapest.getPrice());
+		
+		System.out.println("有那些咖啡的價格超過平均價(請顯示名稱與價格)");
+		for(Coffee coffee : coffees) {
+			if(coffee.getPrice() > average) {
+				// 印出咖啡價格大於平均的資料
+				System.out.printf("%-12s $%3d\n", coffee.getName(), coffee.getPrice());
+			}
+		}
+		
 	}
 
 }
