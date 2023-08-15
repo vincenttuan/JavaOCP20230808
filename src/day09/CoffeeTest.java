@@ -13,6 +13,14 @@ public class CoffeeTest {
 		
 		Coffee mocha = new Coffee("Mocha", "SMALL", "COLD");
 		mocha.display();
+		
+		// --------------------------------------------------------
+		// 將 latte 改成 MEDIUM 也要改 HOT
+		latte.setSize("MEDIUM");
+		latte.setTemperature("HOT");
+		latte.display();
+		
+		
 	}
 
 }

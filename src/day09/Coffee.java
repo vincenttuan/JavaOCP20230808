@@ -15,6 +15,16 @@ public class Coffee {
 		setPrice(); // 根據上述的物件屬性來設定價格
 	}
 	
+	public void setSize(String size) {
+		this.size = size;
+		setPrice(); // 重新設定價格
+	}
+
+	public void setTemperature(String temperature) {
+		this.temperature = temperature;
+		setPrice(); // 重新設定價格
+	}
+
 	// 品名, 大中小, 冷熱 來決定
 	private void setPrice() {
 		// 建立咖啡基礎(小杯)價格
