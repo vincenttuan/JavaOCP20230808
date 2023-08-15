@@ -38,6 +38,10 @@ public class Coffee {
 	}
 	
 	// 方法封裝 setters
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public void setAmount(int amount) {
 		if(amount > 0) {
 			this.amount = amount;
