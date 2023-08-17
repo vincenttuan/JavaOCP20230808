@@ -1,6 +1,6 @@
 package day11;
 
-public class Coffee {
+public abstract class Coffee {
  
 	private String name;
 	 
