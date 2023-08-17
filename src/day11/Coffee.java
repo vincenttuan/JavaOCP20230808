@@ -6,9 +6,6 @@ public abstract class Coffee {
 	 
 	private int price;
 	 
-	public Coffee() {
-	}
-	 
 	public Coffee(String name, int price) {
 		this.name = name;
 		this.price = price;
