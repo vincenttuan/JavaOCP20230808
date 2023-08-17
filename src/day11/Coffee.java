@@ -14,8 +14,7 @@ public abstract class Coffee {
 		this.price = price;
 	}
 	 
-	public void taste() {
-	}
+	public abstract void taste(); // 抽象方法
 
 	public String getName() {
 		return name;
