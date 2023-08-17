@@ -1,6 +1,6 @@
 package day11;
 
-public class CoffeePloyTest {
+public class CoffeePolyTest {
 
 	public static void main(String[] args) {
 		// Coffee 多型
