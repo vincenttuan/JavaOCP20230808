@@ -19,6 +19,12 @@ public class EmpTest {
 			employee.job();
 		}
 		
+		// 加總員工的薪資
+		int sum = 0;
+		for(Employee employee : employees ) {
+			sum += employee.getSalary();
+		}
+		System.out.println(sum);
 	}
 
 }
