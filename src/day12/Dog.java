@@ -1,11 +1,6 @@
 package day12;
 
-public class Dog implements Pet {
-
-	@Override
-	public void eat() {
-		System.out.println("吃飼料");
-	}
+public class Dog extends APet {
 
 	@Override
 	public void skill() {
