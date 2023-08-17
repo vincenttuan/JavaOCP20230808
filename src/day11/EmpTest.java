@@ -14,6 +14,11 @@ public class EmpTest {
 		System.out.printf("經理薪資 $%,d\n", mgr.getSalary());
 		mgr.job();
 		
+		Employee[] employees = {emp, mgr};
+		for(Employee employee : employees ) {
+			employee.job();
+		}
+		
 	}
 
 }
