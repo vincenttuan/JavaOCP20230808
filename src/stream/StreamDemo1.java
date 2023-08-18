@@ -1,6 +1,7 @@
 package stream;
 
 import java.util.Arrays;
+import static java.lang.System.out;
 
 // Stream 串流
 public class StreamDemo1 {
@@ -26,6 +27,11 @@ public class StreamDemo1 {
 			  .forEach(score -> System.out.println(score));  // 3.終點流 forEach 將每一個元素印出 
 		
 		
+		Arrays.stream(scores).filter(score -> score >= 60).forEach(score -> System.out.println(score));
+		// 使用方法參考 ::
+		Arrays.stream(scores).filter(score -> score >= 60).forEach(System.out::println);
+		// 使用 import static + 方法參考 ::
+		Arrays.stream(scores).filter(score -> score >= 60).forEach(out::println);
 	}
 
 }
