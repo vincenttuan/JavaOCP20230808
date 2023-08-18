@@ -84,7 +84,16 @@ public class StreamDemo2 {
 		// score >= 60 印出 "及格"
 		// score < 60  印出 "不及格"
 		// 例如: 100, 42, 83, 70, 55 印出 "優", "不及格", "良", "及格", "不及格"
-		
+		out.println("9. 對印文字印出 優, 良, 及格, 不及格");
+		Arrays.stream(scores)
+			  .filter(legalScore)
+			  .mapToObj(score -> {
+				  if(score >= 90) return "優";
+				  if(score >= 80) return "良";
+				  if(score >= 60) return "及格";
+				  return "不及格";
+			  })
+			  .forEach(out::println);
 		
 		
 	}
