@@ -1,6 +1,7 @@
 package stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.OptionalDouble;
 import java.util.function.IntPredicate;
@@ -60,6 +61,22 @@ public class StreamDemo2 {
 		out.println("平均:" + stat.getAverage());
 		out.println("最高:" + stat.getMax());
 		out.println("最低:" + stat.getMin());
+		
+		// 7. 請排序(合法)分數: 小->大(預設是自然排序)
+		out.println("7. 請排序(合法)分數: 小->大");
+		Arrays.stream(scores)
+			  .filter(legalScore)
+			  .sorted()
+			  .forEach(out::println);
+		
+		// 7. 請排序(合法)分數: 大->小
+		out.println("7. 請排序(合法)分數: 大->小");
+		Arrays.stream(scores)
+			  .filter(legalScore)
+			  .boxed() // Integer 物件
+			  //.sorted((s1, s2) -> s2 - s1)
+			  .sorted(Comparator.reverseOrder())
+			  .forEach(out::println);
 	}
 
 }
