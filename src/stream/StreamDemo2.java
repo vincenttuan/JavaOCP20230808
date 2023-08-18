@@ -43,6 +43,12 @@ public class StreamDemo2 {
 		int sum = Arrays.stream(scores).filter(legalScore).sum();
 		out.print(sum);
 		
+		// 5. 請計算(合法)最高分與最低分
+		int maxScore = Arrays.stream(scores).filter(legalScore).max().getAsInt();
+		int minScore = Arrays.stream(scores).filter(legalScore).min().getAsInt();
+		System.out.println(maxScore);
+		System.out.println(minScore);
+		
 	}
 
 }
