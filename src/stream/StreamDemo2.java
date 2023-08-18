@@ -69,14 +69,24 @@ public class StreamDemo2 {
 			  .sorted()
 			  .forEach(out::println);
 		
-		// 7. 請排序(合法)分數: 大->小
-		out.println("7. 請排序(合法)分數: 大->小");
+		// 8. 請排序(合法)分數: 大->小
+		out.println("8. 請排序(合法)分數: 大->小");
 		Arrays.stream(scores)
 			  .filter(legalScore)
 			  .boxed() // Integer 物件
 			  //.sorted((s1, s2) -> s2 - s1)
 			  .sorted(Comparator.reverseOrder())
 			  .forEach(out::println);
+		
+		// 9. 對印文字印出 優, 良, 及格, 不及格
+		// score >= 90 印出 "優"
+		// score >= 80 印出 "良"
+		// score >= 60 印出 "及格"
+		// score < 60  印出 "不及格"
+		// 例如: 100, 42, 83, 70, 55 印出 "優", "不及格", "良", "及格", "不及格"
+		
+		
+		
 	}
 
 }
