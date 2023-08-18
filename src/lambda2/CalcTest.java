@@ -19,6 +19,11 @@ public class CalcTest {
 			double volume = (4.0/3) * Math.PI * Math.pow(r, 3);
 			return volume;
 		};
+		
+		// 判斷成績是否及格 ?
+		int score = 75;
+		Calc calcPass = x -> x >= 60 ? 1 : 0;
+		System.out.printf(calcPass.apply(score) == 1 ? "及格" : "不及格");
 	}
 
 }
