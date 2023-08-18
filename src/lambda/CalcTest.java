@@ -3,6 +3,8 @@ package lambda;
 public class CalcTest {
 
 	public static void main(String[] args) {
+		// 實現此程式時必須要先建立 CalcArea.java, CalcDiameter.java, CalcVolume.java 才可以使用
+		
 		Calc calc1 = new CalcArea();
 		System.out.println(calc1.apply(10));
 		
