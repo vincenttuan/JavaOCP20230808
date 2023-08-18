@@ -9,12 +9,15 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class CalcTest {
 
 	public static void main(String[] args) {
 		// 若沒有 Calc.java 這個介面要如何透過 Lambda 語法實現圓面積,球體積與直徑的計算
 		// Function 的使用
+		// public interface Function<T, R>
+		//     R apply(T t) 
 		Function<Integer, Double> calcArea = r -> Math.pow(r, 2) * Math.PI;
 		System.out.println(calcArea.apply(10));
 		
@@ -29,6 +32,14 @@ public class CalcTest {
 		//     T apply(T t1, T t2)
 		BinaryOperator<Integer> rectArea = (w, h) -> w * h;
 		System.out.printf("area = %d\n", rectArea.apply(10, 20));
+		
+		// UnaryOperator 的使用
+		// public interface UnaryOperator<T> extends Function<T,T>
+		//     T apply(T t)
+		UnaryOperator<Integer> calcDiameter = r -> 2 * r;
+		System.out.printf("diameter = %d\n", calcDiameter.apply(15));
+		
+		
 		
 		// Consumer 的使用
 		Consumer<String> welcome = name -> System.out.printf("歡迎 %s 蒞臨本公司指導!\n", name);
