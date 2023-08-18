@@ -39,7 +39,9 @@ public class StreamDemo2 {
 		}
 		
 		// 4. 請計算(合法)總分
-		
+		out.println("4. 請計算(合法)總分");
+		int sum = Arrays.stream(scores).filter(legalScore).sum();
+		out.print(sum);
 		
 	}
 
