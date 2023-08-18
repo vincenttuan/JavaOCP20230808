@@ -41,9 +41,10 @@ public class StreamDemo2 {
 		// 4. 請計算(合法)總分
 		out.println("4. 請計算(合法)總分");
 		int sum = Arrays.stream(scores).filter(legalScore).sum();
-		out.print(sum);
+		out.println(sum);
 		
 		// 5. 請計算(合法)最高分與最低分
+		out.println("5. 請計算(合法)最高分與最低分");
 		int maxScore = Arrays.stream(scores).filter(legalScore).max().getAsInt();
 		int minScore = Arrays.stream(scores).filter(legalScore).min().getAsInt();
 		System.out.println(maxScore);
