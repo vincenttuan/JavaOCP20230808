@@ -1,6 +1,8 @@
 package stream;
 
 import java.util.Arrays;
+import java.util.function.IntPredicate;
+
 import static java.lang.System.out;
 
 // Stream 串流
@@ -32,6 +34,11 @@ public class StreamDemo1 {
 		Arrays.stream(scores).filter(score -> score >= 60).forEach(System.out::println);
 		// 使用 import static + 方法參考 ::
 		Arrays.stream(scores).filter(score -> score >= 60).forEach(out::println);
+		// 先定義一個 IntPredicate
+		IntPredicate pass = score -> score >= 60;
+		IntPredicate fail = score -> score < 60;
+		Arrays.stream(scores).filter(pass).forEach(out::println);
+		Arrays.stream(scores).filter(fail).forEach(out::println);
 	}
 
 }
