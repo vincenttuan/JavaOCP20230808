@@ -1,6 +1,8 @@
 package stream;
 
 import java.util.Arrays;
+import java.util.function.IntUnaryOperator;
+
 import static java.lang.System.out;
 
 public class StreamDemo3 {
@@ -23,6 +25,15 @@ public class StreamDemo3 {
 		Arrays.stream(speeds)
 			  .map(speed -> Math.max(0, speed - limitSpeed) * fine)
 			  .forEach(out::println);
+		
+		IntUnaryOperator fineMap = speed -> Math.max(0, speed - limitSpeed) * fine;
+		// 超過 15 公里內不罰
+		IntUnaryOperator fineMap2 = speed -> Math.max(0, (speed-15) - limitSpeed) * fine;
+		
+		Arrays.stream(speeds)
+		  	.map(fineMap2)
+		  	.forEach(out::println);
+	
 	}
 
 }
