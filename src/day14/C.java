@@ -1,5 +1,5 @@
 package day14;
 
-public interface C {
-
+public interface C extends A, B {
+	void demo();
 }
