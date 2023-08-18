@@ -2,6 +2,7 @@ package lambda3;
 
 import java.util.Date;
 import java.util.Random;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -18,6 +19,14 @@ public class CalcTest {
 		// Consumer 的使用
 		Consumer<String> welcome = name -> System.out.printf("歡迎 %s 蒞臨本公司指導!\n", name);
 		welcome.accept("Vincent");
+		
+		// BiConsumer 的使用
+		// public interface BiConsumer<T,U> 
+		//     void accept(T t, U u)
+		BiConsumer<Integer, Double> area = (r, pi) -> System.out.println(r * r * pi);
+		area.accept(10, 3.14);
+		
+		
 		
 		// Predicate 的使用
 		Predicate<Integer> scorePass = score -> score >= 60;
