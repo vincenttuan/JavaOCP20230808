@@ -21,7 +21,6 @@ public class StreamDemo3 {
 			  .map(speeding -> speeding * fine) // 計算罰款
 			  .forEach(out::println);
 		
-		
 		Arrays.stream(speeds)
 			  .map(speed -> Math.max(0, speed - limitSpeed) * fine)
 			  .forEach(out::println);
