@@ -3,6 +3,8 @@ package lambda3;
 import java.util.Date;
 import java.util.Random;
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -16,6 +18,18 @@ public class CalcTest {
 		Function<Integer, Double> calcArea = r -> Math.pow(r, 2) * Math.PI;
 		System.out.println(calcArea.apply(10));
 		
+		// BIFunction 的使用
+		// public interface BiFunction<T,U,R>
+		//     R apply(T t, U u)
+		BiFunction<Integer, Float, Double> total = (amount, price) -> (double)(amount * price);
+		System.out.printf("total = %.1f\n", total.apply(9, 3.5f));
+		
+		// BinaryOperator 的使用
+		// public interface BinaryOperator<T> extends BiFunction<T,T,T>
+		//     T apply(T t1, T t2)
+		BinaryOperator<Integer> rectArea = (w, h) -> w * h;
+		System.out.printf("area = %d\n", rectArea.apply(10, 20));
+		
 		// Consumer 的使用
 		Consumer<String> welcome = name -> System.out.printf("歡迎 %s 蒞臨本公司指導!\n", name);
 		welcome.accept("Vincent");
@@ -25,8 +39,6 @@ public class CalcTest {
 		//     void accept(T t, U u)
 		BiConsumer<Integer, Double> area = (r, pi) -> System.out.println(r * r * pi);
 		area.accept(10, 3.14);
-		
-		
 		
 		// Predicate 的使用
 		Predicate<Integer> scorePass = score -> score >= 60;
