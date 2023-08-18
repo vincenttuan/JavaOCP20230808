@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.OptionalDouble;
+import java.util.function.IntFunction;
 import java.util.function.IntPredicate;
 import static java.lang.System.out;
 
@@ -95,6 +96,24 @@ public class StreamDemo2 {
 			  })
 			  .forEach(out::println);
 		
+		IntFunction<String> funLevel = score -> {
+			  if(score >= 90) return "優";
+			  if(score >= 80) return "良";
+			  if(score >= 60) return "及格";
+			  return "不及格";
+		};
+		
+		IntFunction<String> funLevel2 = score -> {
+			  if(score >= 90) return "A";
+			  if(score >= 80) return "B";
+			  if(score >= 60) return "C";
+			  return "F";
+		};
+		
+		Arrays.stream(scores)
+		  .filter(legalScore)
+		  .mapToObj(funLevel2)
+		  .forEach(out::println);
 		
 	}
 
