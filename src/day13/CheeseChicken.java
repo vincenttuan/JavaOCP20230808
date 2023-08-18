@@ -6,7 +6,7 @@ public class CheeseChicken extends FriedChicken {
 		super(price);
 	}
 
-	@Override
+	//@Override
 	public void flavor() {
 		System.out.println("起司風味鹽酥雞");
 	}

@@ -6,7 +6,7 @@ public class FiredTofu extends Tofu {
 		price += 10; // $ 預設價格 + 10
 	}
 	
-	@Override
+	//@Override
 	public void flavor() {
 		System.out.println("炸豆腐風味");
 	}

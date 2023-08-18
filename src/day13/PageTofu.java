@@ -6,7 +6,7 @@ public class PageTofu extends Tofu {
 		price += 15; // $ 預設價格 + 15
 	}
 	
-	@Override
+	//@Override
 	public void flavor() {
 		System.out.println("百頁豆腐風味");
 	}

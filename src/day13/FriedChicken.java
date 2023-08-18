@@ -7,7 +7,7 @@ public abstract class FriedChicken implements Snack {
 		this.price = price;
 	}
 	
-	@Override
+	//@Override
 	public int getPrice() {
 		return price;
 	}
