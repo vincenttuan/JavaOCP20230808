@@ -1,6 +1,7 @@
 package stream;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.OptionalDouble;
 import java.util.function.IntPredicate;
 import static java.lang.System.out;
@@ -50,6 +51,15 @@ public class StreamDemo2 {
 		System.out.println(maxScore);
 		System.out.println(minScore);
 		
+		// 6. 請計算(合法)分數個數,總分,平均,最高分與最低分, 可以利用統計物件(IntSummaryStatistics)來達成
+		out.println("6. 請計算(合法)分數個數,總分,平均,最高分與最低分");
+		IntSummaryStatistics stat = Arrays.stream(scores).filter(legalScore).summaryStatistics();
+		out.println(stat);
+		out.println("個數:" + stat.getCount());
+		out.println("總分:" + stat.getSum());
+		out.println("平均:" + stat.getAverage());
+		out.println("最高:" + stat.getMax());
+		out.println("最低:" + stat.getMin());
 	}
 
 }
