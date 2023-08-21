@@ -8,6 +8,18 @@ public class Pen {
 		this.color = color;
 		this.price = price;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Pen)) {
+			return false;
+		}
+		Pen p2 = (Pen)obj;
+		if(color.equals(p2.color) && price == p2.price) {
+			return true;
+		}
+		return false;
+	}
 
 	@Override
 	public String toString() {
