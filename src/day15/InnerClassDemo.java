@@ -12,6 +12,8 @@ public class InnerClassDemo {
 		
 		// 簡便寫法
 		new Outer().new Inner().callMe();
+		
+		outer.foo(); // 調用 foo() 方法
 	}
 
 }

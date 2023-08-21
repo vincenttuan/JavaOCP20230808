@@ -17,4 +17,16 @@ public class Outer {
 		
 	}
 	
+	public void foo() {
+		
+		class Bar { // 方法內部類別
+			void print() {
+				System.out.println("Hello Bar...");
+			}
+		}
+		
+		Bar bar = new Bar();
+		bar.print();
+	}
+	
 }
