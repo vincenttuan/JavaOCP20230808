@@ -28,8 +28,6 @@ public class Pen {
 		return Objects.equals(color, other.color) && price == other.price;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Pen [color=" + color + ", price=" + price + "]";
