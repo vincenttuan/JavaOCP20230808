@@ -1,5 +1,7 @@
 package day16;
 
+import java.util.Objects;
+
 public class Pen {
 	private String color;
 	private int price;
@@ -10,16 +12,23 @@ public class Pen {
 	}
 	
 	@Override
-	public boolean equals(Object obj) {
-		if(!(obj instanceof Pen)) {
-			return false;
-		}
-		Pen p2 = (Pen)obj;
-		if(color.equals(p2.color) && price == p2.price) {
-			return true;
-		}
-		return false;
+	public int hashCode() {
+		return Objects.hash(color, price);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pen other = (Pen) obj;
+		return Objects.equals(color, other.color) && price == other.price;
+	}
+
+
 
 	@Override
 	public String toString() {
