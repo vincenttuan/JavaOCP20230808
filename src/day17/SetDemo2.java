@@ -20,6 +20,13 @@ public class SetDemo2 {
 				System.out.println(data);
 			}
 		}
+		
+		// Java 8(含)以後每一個集合都可以直接透過呼叫 stream() 方法轉成 Stream 串流
+		subjects.stream()
+				.filter(data -> data != null)
+				.forEach(data -> System.out.println(data));
+		
+		
 	}
 
 }
