@@ -32,6 +32,12 @@ public class AutoBoxedAndAutoUnBoxed {
 			  //.mapToInt(n -> n) // 相當於 mapToInt(n -> n.intValue()) 自動拆箱 (此行可以省略)
 			  .mapToInt(Integer::intValue) // 透過方法參考 (此行可以省略)
 			  .forEach(System.out::println);
+		
+		Integer[] numbers = {90, 100, 80};
+		Arrays.stream(numbers) // Integer 串流
+			  .mapToInt(Integer::intValue) // 轉換成 int 串流
+			  .sum(); // 計算總和
+		System.out.println(sum);
 	}
 
 }
