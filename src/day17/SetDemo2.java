@@ -16,7 +16,9 @@ public class SetDemo2 {
 		System.out.println(subjects);
 		
 		for(String data : subjects) {
-			System.out.println(data);
+			if(data != null) {
+				System.out.println(data);
+			}
 		}
 	}
 
