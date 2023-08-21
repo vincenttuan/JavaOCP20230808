@@ -3,10 +3,10 @@ package day16;
 public class Coin {
 
 	public static void main(String[] args) {
-		USCurrency penny = new USCurrency(1);
+		USCurrency penny = USCurrency.PENNY;
 		System.out.println(penny.getValue());
 		
-		USCurrency nickle = new USCurrency(5);
+		USCurrency nickle = USCurrency.NICKLE;
 		System.out.println(nickle.getValue());
 		
 	}
