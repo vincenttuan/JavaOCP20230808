@@ -8,7 +8,9 @@ public enum USCurrency {
 	
 	private int value;
 	
-	private USCurrency(int value) {
+	// 在 enum 類中預設的建構子權限只能是 private
+	// 不寫就是 private
+	USCurrency(int value) { 
 		this.value = value;
 	}
 	
