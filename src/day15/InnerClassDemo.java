@@ -14,6 +14,10 @@ public class InnerClassDemo {
 		new Outer().new Inner().callMe();
 		
 		outer.foo(); // 調用 foo() 方法
+		
+		// 調用靜態內部類類別
+		Outer.SInner sinner = new Outer.SInner();
+		sinner.callMe();
 	}
 
 }
