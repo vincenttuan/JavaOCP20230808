@@ -12,6 +12,7 @@ public class SetDemo4 {
 		Exam e3 = new Exam("Jack", null);
 		Exam e4 = new Exam("Rose", 85);
 		Exam e5 = new Exam("Jean", 75);
+		Exam e6 = new Exam("Jean", 75);
 		
 		Set<Exam> exams = new LinkedHashSet<>();
 		exams.add(e1);
@@ -19,6 +20,7 @@ public class SetDemo4 {
 		exams.add(e3);
 		exams.add(e4);
 		exams.add(e5);
+		exams.add(e6);
 		
 		System.out.println(exams.size());
 		System.out.println(exams);
