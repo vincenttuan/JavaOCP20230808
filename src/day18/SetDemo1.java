@@ -42,9 +42,18 @@ public class SetDemo1 {
 		// 使用 Java Stream 來移除 null 元素
 		Set<Integer> newScores = scores.stream()
 									   .filter(score -> score != null)  // 過濾出非 null 的元素
-									   .collect(Collectors.toSet());    // 將符合的元素重新收集並建立一個新的集合來存放
+									   .collect(Collectors.toSet());    // 將符合的元素重新收集並建立一個新的集合來存放(預設是 HashSet)
 		System.out.println(newScores.size());
 		System.out.println(newScores);
+		
+		// 由於 Collectors.toSet() 預設是 HashSet
+		// 若要改為 LinkedHashSet 則必須要透過 Collectors.toCollection(LinkedHashSet::new)
+		Set<Integer> newScores2 = scores.stream()
+				   						.filter(score -> score != null)  // 過濾出非 null 的元素
+				   						.collect(Collectors.toCollection(LinkedHashSet::new)); // 將符合的元素重新收集並建立一個新的集合來存放
+		System.out.println(newScores2.size());
+		System.out.println(newScores2);
+
 	}
 
 }
