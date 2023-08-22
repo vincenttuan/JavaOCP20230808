@@ -6,8 +6,9 @@ import java.util.Queue;
 
 public class ListDemo2 {
 	public static void main(String[] args) {
-		// Queue 佇列(排隊, 先進先出)
+		// Queue 佇列(單向對列, 先進先出)
 		Queue<String> customerQueue = new LinkedList<>();
+		// Deque 佇列(雙向對列)
 		//Deque<String> customerQueue = new LinkedList<>();
 		
 		// 3位客戶加入排隊取餐
