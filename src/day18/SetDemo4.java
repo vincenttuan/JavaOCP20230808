@@ -53,6 +53,15 @@ public class SetDemo4 {
 						.mapToInt(Integer::intValue) // int stream
 						.sum();
 		System.out.printf("總分: %d\n", sum3);
+		
+		// 規納 reduce
+		int sum4 = exams.stream()  // Exam stream
+						.map(exam -> exam.getScore())  // Integer stream
+						.filter(Objects::nonNull)  // Integer stream
+						//.reduce(0, (a, b) -> a + b);
+						//.reduce(0, (a, b) -> Integer.sum(a, b));
+						.reduce(0, Integer::sum);
+		System.out.printf("總分: %d\n", sum4);
 	}
 
 }
