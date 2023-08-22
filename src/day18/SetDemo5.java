@@ -11,6 +11,10 @@ public class SetDemo5 {
 		Exam e3 = new Exam("Rose", 85);
 		
 		Set<Exam> exams = new TreeSet<>();
+		exams.add(e1);
+		exams.add(e2);
+		exams.add(e3);
+		
 		System.out.println(exams.size());
 		System.out.println(exams);
 
