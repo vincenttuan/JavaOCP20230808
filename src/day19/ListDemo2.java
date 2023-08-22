@@ -1,5 +1,6 @@
 package day19;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -7,12 +8,14 @@ public class ListDemo2 {
 	public static void main(String[] args) {
 		// Queue 佇列(排隊, 先進先出)
 		Queue<String> customerQueue = new LinkedList<>();
+		//Deque<String> customerQueue = new LinkedList<>();
 		
 		// 3位客戶加入排隊取餐
 		// offer() 加入元素, poll() 將元素從對列中移除
 		customerQueue.offer("John");
 		customerQueue.offer("Mary");
 		customerQueue.offer("Steve");
+		//customerQueue.offerFirst("Boss"); // 插隊 (Deque 支援)
 		System.out.printf("目前排隊狀況: %s\n", customerQueue);
 		
 		// 第一位客戶完成取餐
