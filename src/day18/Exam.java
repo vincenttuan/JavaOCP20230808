@@ -2,7 +2,7 @@ package day18;
 
 import java.util.Objects;
 
-public class Exam {
+public class Exam implements Comparable<Exam> {
 	private String name;
 	private Integer score;
 	
@@ -47,6 +47,12 @@ public class Exam {
 	@Override
 	public String toString() {
 		return "Exam [name=" + name + ", score=" + score + "]";
+	}
+
+	@Override
+	public int compareTo(Exam o) {
+		return score - o.getScore();
+		//return o.getScore() - score;
 	}
 	
 	
