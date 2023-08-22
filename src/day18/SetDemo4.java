@@ -24,6 +24,19 @@ public class SetDemo4 {
 		
 		System.out.println(exams.size());
 		System.out.println(exams);
+		
+		// 計算總分(不含缺考)
+		int sum = 0;
+		for(Exam exam : exams) {
+			Integer score = exam.getScore();
+			if(score != null) {
+				//sum += score.intValue();
+				sum += score; // auto-unboxed
+			}
+		}
+		System.out.printf("總分: %d\n", sum);
+		
+		
 	}
 
 }
