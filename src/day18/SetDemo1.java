@@ -50,7 +50,8 @@ public class SetDemo1 {
 		// 若要改為 LinkedHashSet 則必須要透過 Collectors.toCollection(LinkedHashSet::new)
 		Set<Integer> newScores2 = scores.stream()
 				   						.filter(score -> score != null)  // 過濾出非 null 的元素
-				   						.collect(Collectors.toCollection(LinkedHashSet::new)); // 將符合的元素重新收集並建立一個新的集合來存放
+				   						//.collect(Collectors.toCollection(() -> new LinkedHashSet<>())); // 將符合的元素重新收集並建立一個新的集合來存放
+										.collect(Collectors.toCollection(LinkedHashSet::new)); // 將符合的元素重新收集並建立一個新的集合來存放
 		System.out.println(newScores2.size());
 		System.out.println(newScores2);
 
