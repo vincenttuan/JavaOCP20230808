@@ -1,6 +1,7 @@
 package day18;
 
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class SetDemo4 {
@@ -36,7 +37,22 @@ public class SetDemo4 {
 		}
 		System.out.printf("總分: %d\n", sum);
 		
+		// 計算總分(不含缺考) 利用 java stream
+		int sum2 = exams.stream()
+						.filter(exam -> exam.getScore() != null)
+						//.mapToInt(exam -> exam.getScore().intValue())
+						.mapToInt(Exam::getScore)
+						.sum();
+		System.out.printf("總分: %d\n", sum2);
 		
+		int sum3 = exams.stream() // Exam stream
+						.map(exam -> exam.getScore()) // Integer stream
+						//.filter(score -> score != null)  // Integer stream
+						.filter(Objects::nonNull)  // Integer stream
+						//.mapToInt(score -> score.intValue()) // int stream
+						.mapToInt(Integer::intValue) // int stream
+						.sum();
+		System.out.printf("總分: %d\n", sum3);
 	}
 
 }
