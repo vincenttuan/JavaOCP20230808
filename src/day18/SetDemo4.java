@@ -62,6 +62,12 @@ public class SetDemo4 {
 						//.reduce(0, (a, b) -> Integer.sum(a, b));
 						.reduce(0, Integer::sum);
 		System.out.printf("總分: %d\n", sum4);
+		
+		// 利用 ? :
+		int sum5 = exams.stream()
+						.mapToInt(exam -> exam.getScore() == null ? 0 : exam.getScore())
+						.sum();
+		System.out.printf("總分: %d\n", sum5);
 	}
 
 }
