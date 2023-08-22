@@ -3,6 +3,7 @@ package day18;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class SetDemo1 {
 
@@ -24,6 +25,7 @@ public class SetDemo1 {
 		System.out.println("------------------------------");
 		
 		// 集合走訪器: Iterator
+		/*
 		Iterator<Integer> iter = scores.iterator();
 		while (iter.hasNext()) {
 			Integer score = iter.next();
@@ -35,7 +37,14 @@ public class SetDemo1 {
 		}
 		System.out.println(scores.size());
 		System.out.println(scores);
+		*/
 		
+		// 使用 Java Stream 來移除 null 元素
+		Set<Integer> newScores = scores.stream()
+									   .filter(score -> score != null)  // 過濾出非 null 的元素
+									   .collect(Collectors.toSet());    // 將符合的元素重新收集並建立一個新的集合來存放
+		System.out.println(newScores.size());
+		System.out.println(newScores);
 	}
 
 }
