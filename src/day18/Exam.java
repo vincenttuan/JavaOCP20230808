@@ -2,9 +2,9 @@ package day18;
 
 public class Exam {
 	private String name;
-	private int score;
+	private Integer score;
 	
-	public Exam(String name, int score) {
+	public Exam(String name, Integer score) {
 		this.name = name;
 		this.score = score;
 	}
@@ -17,11 +17,11 @@ public class Exam {
 		this.name = name;
 	}
 
-	public int getScore() {
+	public Integer getScore() {
 		return score;
 	}
 
-	public void setScore(int score) {
+	public void setScore(Integer score) {
 		this.score = score;
 	}
 
@@ -29,6 +29,7 @@ public class Exam {
 	public String toString() {
 		return "Exam [name=" + name + ", score=" + score + "]";
 	}
+	
 	
 	
 }
