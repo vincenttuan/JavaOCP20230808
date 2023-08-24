@@ -3,8 +3,13 @@ package day21;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
+import static java.util.Comparator.comparingInt;
+import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toCollection;
 
 public class MapStreamCoffee2 {
 
@@ -25,6 +30,12 @@ public class MapStreamCoffee2 {
 				.sorted(Comparator.comparingInt(Coffee::getPrice).reversed())
 				.collect(toList());
 		System.out.println(sortedCoffees);
+		
+		// 根據size來分組, 每一組內的咖啡透過 price 來排序
+		Map<CoffeeSize, TreeSet<Coffee>> sortedCoffees2 = coffees.stream()
+				.collect(groupingBy(Coffee::getSize, 
+									toCollection(() -> new TreeSet<>(comparingInt(Coffee::getPrice).reversed()))));
+		System.out.println(sortedCoffees2);
 
 	}
 
