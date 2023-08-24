@@ -2,6 +2,7 @@ package day20;
 
 import java.util.HashMap;
 import java.util.Map;
+import static java.util.Map.Entry;
 
 public class MapDemo1 {
 
@@ -33,6 +34,10 @@ public class MapDemo1 {
 		// 6. 移除一個鍵值對
 		map.remove("Mary"); // 放入 key
 		System.out.println(map);
+		// 7. 遍歷 Map 並印出所有的鍵和值
+		for(Entry<String, Integer> entry  : map.entrySet()) {
+			System.out.printf("鍵: %s 值: %d\n", entry.getKey(), entry.getValue());
+		}
 	}
 
 }
