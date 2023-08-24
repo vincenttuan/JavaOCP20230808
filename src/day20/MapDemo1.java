@@ -48,7 +48,12 @@ public class MapDemo1 {
 		// 9. 取得所有值 values
 		Collection<Integer> values = map.values();
 		System.out.println(values);
-		
+		// 10. 清空 map
+		map.clear();
+		// 檢查是否是空的
+		boolean isEmpty = map.isEmpty();
+		System.out.println(isEmpty);
+		System.out.println(map);
 	}
 
 }
