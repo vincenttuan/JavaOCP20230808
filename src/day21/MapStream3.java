@@ -32,6 +32,10 @@ public class MapStream3 {
 				.collect(groupingBy(String::length, groupingBy(name->name.charAt(0))));
 		System.out.println(result3);
 		
+		// 印出每一種姓氏的人名
+		Map<Character, List<String>> result4 = names.stream()
+				.collect(groupingBy(name->name.charAt(0)));
+		System.out.println(result4);
 		
 	}
 
