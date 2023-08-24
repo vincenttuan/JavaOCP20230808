@@ -1,8 +1,10 @@
 package day20;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import static java.util.Map.Entry;
 
@@ -18,7 +20,9 @@ public class MapDemo1 {
 		// 很多鍵與值的組合稱為 - EntrySet
 		// 10 個基本練習
 		// 1. 建立一個空的 HashMap
-		Map<String, Integer> map = new HashMap<>();
+		//Map<String, Integer> map = new HashMap<>(); // HashMap 無序
+		//Map<String, Integer> map = new LinkedHashMap<>(); // LinkedHashMap 有序
+		Map<String, Integer> map = new TreeMap<>(); // TreeMap 按照 key 由小到大排序
 		System.out.println(map);
 		// 2. 向 HashMap 添加鍵值對
 		map.put("John", 25);
