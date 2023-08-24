@@ -27,6 +27,12 @@ public class MapStream3 {
 				.collect(groupingBy(String::length, counting()));
 		System.out.println(result2);
 		
+		// 按照名字長度進行主要分組, 再以姓氏進行次要分組
+		Map<Integer, Map<Character, List<String>>> result3 = names.stream()
+				.collect(groupingBy(String::length, groupingBy(name->name.charAt(0))));
+		System.out.println(result3);
+		
+		
 	}
 
 }
