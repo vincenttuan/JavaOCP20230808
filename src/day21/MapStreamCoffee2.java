@@ -1,7 +1,10 @@
 package day21;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toList;
 
 public class MapStreamCoffee2 {
 
@@ -16,6 +19,12 @@ public class MapStreamCoffee2 {
 				new Coffee(CoffeeName.美式, CoffeeSize.小杯, 70)
 		);
 		System.out.println(coffees);
+		// 根據價格來進行排序
+		List<Coffee> sortedCoffees = coffees.stream()
+				//.sorted(Comparator.comparingInt(Coffee::getPrice))
+				.sorted(Comparator.comparingInt(Coffee::getPrice).reversed())
+				.collect(toList());
+		System.out.println(sortedCoffees);
 
 	}
 
