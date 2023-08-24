@@ -26,6 +26,7 @@ public class MapDemo1 {
 		System.out.println(map);
 		// 2. 向 HashMap 添加鍵值對
 		map.put("John", 25);
+		map.put("John", 29); // 若 key 相同則之前的元素會被取代
 		map.put("Mary", 30);
 		map.put("Jack", 28);
 		map.put("Rose", 26);
