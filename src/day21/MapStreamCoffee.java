@@ -6,6 +6,7 @@ import java.util.Map;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.summingInt;
 
 public class MapStreamCoffee {
 	public static void main(String[] args) {
@@ -21,14 +22,18 @@ public class MapStreamCoffee {
 		System.out.println(coffees);
 		
 		// 1. 每一種咖啡各有幾杯
-		// 例如：{摩卡=2, 拿鐵=2, 美式=3}
+		// 例如:{摩卡=2, 拿鐵=2, 美式=3}
 		Map<CoffeeName, Long> result = coffees.stream()
 				//.collect(groupingBy(coffee -> coffee.getName(), counting()));
 				.collect(groupingBy(Coffee::getName, counting()));
 		System.out.println(result);
 		
 		// 2. 每一種咖啡請加總小計價格
-		
+		// 例如:{拿鐵=220, 摩卡=220, 美式=250}
+		Map<CoffeeName, Integer> result2 = coffees.stream()
+				.collect(groupingBy(Coffee::getName, summingInt(Coffee::getPrice)));
+		System.out.println(result2);
 		
 	}
 }
+
