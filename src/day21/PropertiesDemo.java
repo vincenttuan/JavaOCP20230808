@@ -1,5 +1,6 @@
 package day21;
 
+import java.io.FileInputStream;
 import java.util.Properties;
 
 public class PropertiesDemo {
@@ -15,6 +16,22 @@ public class PropertiesDemo {
 			System.out.printf("key=%s value=%s\n", key, prop.getProperty(key));
 		}
 		
+		Properties dbProp = new Properties();
+		// Properties 取得 config.properties 檔案內容
+		try(FileInputStream in = new FileInputStream("src/day21/config.properties")) {
+			// 資料載入
+			dbProp.load(in);
+			
+			String username = dbProp.getProperty("db.username");
+			String password = dbProp.getProperty("db.password");
+			String url = dbProp.getProperty("db.url");
+			System.out.println(username);
+			System.out.println(password);
+			System.out.println(url);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
