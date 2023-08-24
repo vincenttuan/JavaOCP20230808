@@ -25,7 +25,8 @@ public class MapDemo5 {
 		// 將 map1 與 map2 合併(merge)
 		// 例如: {租金=6000, 網費=1000, 電費=900}
 		for(Entry<String, Integer> entry : map2.entrySet()) {
-			map1.merge(entry.getKey(), entry.getValue(), (a, b) -> a + b);
+			//map1.merge(entry.getKey(), entry.getValue(), (a, b) -> a + b);
+			map1.merge(entry.getKey(), entry.getValue(), Integer::sum);
 		}
 		System.out.println(map1);
 
