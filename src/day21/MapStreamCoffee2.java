@@ -2,6 +2,7 @@ package day21;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
@@ -31,12 +32,21 @@ public class MapStreamCoffee2 {
 				.collect(toList());
 		System.out.println(sortedCoffees);
 		
-		// 根據size來分組, 每一組內的咖啡透過 price 來排序
-		Map<CoffeeSize, TreeSet<Coffee>> sortedCoffees2 = coffees.stream()
+		// 根據 size 來分組, 每一組內的咖啡透過 price 來排序-利用sortedCoffees
+		Map<CoffeeSize, List<Coffee>> sortedCoffees2 = sortedCoffees.stream()
+				.collect(groupingBy(Coffee::getSize, LinkedHashMap::new, Collectors.toList()));
+		System.out.println(sortedCoffees2);
+		
+		
+		// 根據 size 來分組, 每一組內的咖啡透過 price 來排序-利用 TreeSet
+		Map<CoffeeSize, TreeSet<Coffee>> sortedCoffees3 = coffees.stream()
 				.collect(groupingBy(Coffee::getSize, 
 									toCollection(() -> new TreeSet<>(comparingInt(Coffee::getPrice).reversed()))));
-		System.out.println(sortedCoffees2);
-
+		System.out.println(sortedCoffees3);
+		
+		
+		
+		
 	}
 
 }
