@@ -2,7 +2,11 @@ package day20;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
 import static java.util.Map.Entry;
+
+import java.util.Collection;
 
 public class MapDemo1 {
 
@@ -38,6 +42,25 @@ public class MapDemo1 {
 		for(Entry<String, Integer> entry  : map.entrySet()) {
 			System.out.printf("鍵: %s 值: %d\n", entry.getKey(), entry.getValue());
 		}
+		// 8. 取得所有鍵 keys
+		Set<String> keys = map.keySet();
+		System.out.println(keys);
+		// 9. 取得所有值 values
+		Collection<Integer> values = map.values();
+		System.out.println(values);
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
