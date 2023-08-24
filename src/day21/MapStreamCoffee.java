@@ -3,10 +3,13 @@ package day21;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.Collectors.maxBy;
+import static java.util.stream.Collectors.minBy;
 
 public class MapStreamCoffee {
 	public static void main(String[] args) {
@@ -34,6 +37,22 @@ public class MapStreamCoffee {
 				.collect(groupingBy(Coffee::getName, summingInt(Coffee::getPrice)));
 		System.out.println(result2);
 		
+		// 3. 請查出每一種尺寸最貴與最便宜的咖啡
+		Map<CoffeeSize, Optional<Coffee>> maxCoffee = coffees.stream()
+				//.collect(groupingBy(Coffee::getSize, maxBy((c1, c2) -> c1.getPrice() - c2.getPrice())));
+				.collect(groupingBy(Coffee::getSize, maxBy((c1, c2) -> c1.getPrice().compareTo(c2.getPrice()))));
+		
+		System.out.println(maxCoffee);
+		System.out.println(maxCoffee.get(CoffeeSize.大杯));
+		
+		if(maxCoffee.get(CoffeeSize.大杯).isPresent()) {
+			Coffee coffee = maxCoffee.get(CoffeeSize.大杯).get();
+			System.out.printf("%s 最貴的是 %s $%d\n", coffee.getSize(), coffee.getName(), coffee.getPrice());
+		}
 	}
 }
+
+
+
+
 
