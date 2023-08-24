@@ -20,6 +20,13 @@ public class MapStream3 {
 				.collect(groupingBy(name -> name.charAt(0), counting()));
 		System.out.println(result);
 		
+		// 按照名字長度分組
+		// {3=5, 2=5}
+		Map<Integer, Long> result2 = names.stream()
+				//.collect(groupingBy(name -> name.length(), counting()));
+				.collect(groupingBy(String::length, counting()));
+		System.out.println(result2);
+		
 	}
 
 }
