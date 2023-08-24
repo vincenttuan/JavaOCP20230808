@@ -12,9 +12,9 @@ enum CoffeeSize {
 public class Coffee {
 	private CoffeeName name;
 	private CoffeeSize size;
-	private Double price;
+	private Integer price;
 	
-	public Coffee(CoffeeName name, CoffeeSize size, Double price) {
+	public Coffee(CoffeeName name, CoffeeSize size, Integer price) {
 		this.name = name;
 		this.size = size;
 		this.price = price;
@@ -36,11 +36,11 @@ public class Coffee {
 		this.size = size;
 	}
 
-	public Double getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 
