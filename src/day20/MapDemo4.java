@@ -7,6 +7,7 @@ public class MapDemo4 {
 		// 每一個員工與薪資上調比例的關係
 		// {John=0.10, Mary=0.07, Steve=0.04, Anna=0.06}
 		// 請利用 Map 計算每一個員工調整後的薪資
+		// 調整後的薪資要放在一個 Map 集合中
 		
 		
 	}
