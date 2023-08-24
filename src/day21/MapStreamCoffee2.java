@@ -33,6 +33,8 @@ public class MapStreamCoffee2 {
 		System.out.println(sortedCoffees);
 		
 		// 根據 size 來分組, 每一組內的咖啡透過 price 來排序-利用sortedCoffees
+		// 選擇 LinkedHashMap 是為了保持鍵的插入順序
+		// Collectors.toList() 每一個分組必須如何進行蒐集
 		Map<CoffeeSize, List<Coffee>> sortedCoffees2 = sortedCoffees.stream()
 				.collect(groupingBy(Coffee::getSize, LinkedHashMap::new, Collectors.toList()));
 		System.out.println(sortedCoffees2);
