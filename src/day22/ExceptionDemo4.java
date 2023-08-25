@@ -23,7 +23,7 @@ public class ExceptionDemo4 {
 			if(userPwd == 1234) {
 				System.out.println("登入成功");
 				play();
-			} else { // 密碼錯誤得失敗
+			} else { // 密碼錯誤驗證失敗
 				RuntimeException re = new RuntimeException("登入失敗, 請重新登入!");
 				throw re;
 			}
