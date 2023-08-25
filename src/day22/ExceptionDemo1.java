@@ -29,6 +29,8 @@ public class ExceptionDemo1 {
 			}
 		} catch(InputMismatchException e) { // 輸入的型別不正確的失敗
 			System.out.printf("登入錯誤: %s 請重新登入!\n", e.toString());
+			System.out.printf("錯誤原因: %s\n", e.getMessage());
+			System.out.printf("自訂原因: %s\n", "密碼必須是數字");
 			login(); // 重新呼叫 login()
 		}
 		
