@@ -9,8 +9,16 @@ public class ExceptionDemo5 {
 	private static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		login();
-		System.out.println("Game Over!");
+		while (true) {
+			try {
+				login();
+				System.out.println("Game Over!");
+				break;
+			} catch(RuntimeException e) {
+				System.out.printf("錯誤訊息: %s\n", e.getMessage());
+				continue;
+			}
+		}
 		sc.close();
 	}
 	
@@ -34,8 +42,7 @@ public class ExceptionDemo5 {
 			System.out.println("登入成功");
 			play();
 		} else {
-			System.out.println("登入失敗請重新登入");
-			login();
+			throw new RuntimeException("登入失敗請重新登入");
 		}
 	}
 	
