@@ -26,8 +26,10 @@ public class WebIODemo3 {
 		// 4. 執行請求(request)並接收回應(response)
 		try {
 			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString(Charset.forName("UTF-8")));
-			// 5. 印出回應結果
-			System.out.println(response.body());
+			// 5. 回應結果: 得到 json String
+			String jsonString = response.body();
+			System.out.println(jsonString);
+			
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
 		}
