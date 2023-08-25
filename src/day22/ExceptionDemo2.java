@@ -9,8 +9,15 @@ import java.util.InputMismatchException;
 public class ExceptionDemo2 {
 
 	public static void main(String[] args) {
-		login();
-		System.out.println("Game Over");
+		try {
+			login();
+			System.out.println("Game Over");
+		} catch (InputMismatchException e) {
+			System.out.printf("登入錯誤: %s 請重新登入!\n", e.toString());
+			System.out.printf("錯誤原因: %s\n", e.getMessage());
+			System.out.printf("自訂原因: %s\n", "密碼必須是數字");
+			main(args); // 重新呼叫 main()
+		}
 	}
 	
 	// 登入
