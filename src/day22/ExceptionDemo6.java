@@ -15,7 +15,8 @@ public class ExceptionDemo6 {
 				System.out.println("Game Over!");
 				break;
 			} catch (LoginException e) {
-				System.out.printf("錯誤訊息: %s\n", e.getMessage());
+				//System.out.printf("錯誤訊息: %s\n", e.getMessage());
+				e.printErrorMessage();
 				continue;
 			}
 		}
