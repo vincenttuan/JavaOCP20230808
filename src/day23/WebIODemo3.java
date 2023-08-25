@@ -6,6 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.Charset;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 
@@ -31,10 +32,21 @@ public class WebIODemo3 {
 			// 5. 回應結果: 得到 json String
 			String jsonString = response.body();
 			//System.out.println(jsonString);
+			
 			// 6. 利用 Gson 將 json 陣列字串轉 BadRice[]
 			Gson gson = new Gson();
 			BadRice[] badRices = gson.fromJson(jsonString, BadRice[].class);
 			System.out.printf("資料筆數: %d\n", badRices.length);
+			
+			// 7. 進行分析
+			String keyword = "冠軍";
+			Arrays.stream(badRices)
+				  .filter(badRice -> badRice.get品名().contains(keyword))
+				  .forEach(badRice -> {
+					  // 換行符號: \n 或 \r\n
+					  System.out.printf("品名: %s 不合格原因: %s\n", badRice.get品名(), badRice.get不合格原因().replaceAll("\n", ""));
+				  });
+			
 			
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
