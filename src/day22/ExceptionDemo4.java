@@ -18,24 +18,36 @@ public class ExceptionDemo4 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("請輸入四位數密碼:");
 		
-		int userPwd = sc.nextInt();
-		if(userPwd == 1234) {
-			System.out.println("登入成功");
-			play();
-		} else { // 密碼錯誤得失敗
-			System.out.println("登入失敗, 請重新登入!");
-			login(); // 重新呼叫 login()
+		try {
+			int userPwd = sc.nextInt();  // 可能會有 InputMismatchException
+			if(userPwd == 1234) {
+				System.out.println("登入成功");
+				play();
+			} else { // 密碼錯誤得失敗
+				RuntimeException re = new RuntimeException("登入失敗, 請重新登入!");
+				throw re;
+			}
+		} catch(InputMismatchException e1) {
+			System.out.printf("錯誤訊息: 輸入格式不正確請重新輸入 %s\n", e1);
+			login();
+		} catch(RuntimeException e2) {
+			System.out.printf("錯誤訊息: %s\n", e2.getMessage());
+			login();
 		}
-		
 	}
 	
 	// 遊戲開始
 	public static void play() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("遊戲開始!\n請輸入年齡:");
-		int age = sc.nextInt();
-		int luckyNumber = new Random(age).nextInt(10); // 0~9
-		System.out.printf("您的幸運數字: %d\n", luckyNumber);
+		try {
+			int age = sc.nextInt();
+			int luckyNumber = new Random(age).nextInt(10); // 0~9
+			System.out.printf("您的幸運數字: %d\n", luckyNumber);
+		} catch(InputMismatchException e1) {
+			System.out.printf("錯誤訊息: 輸入格式不正確請重新輸入 %s\n", e1);
+			play();
+		}
 	}
 
 }
