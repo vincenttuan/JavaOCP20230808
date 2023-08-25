@@ -39,9 +39,11 @@ public class WebIODemo3 {
 			System.out.printf("資料筆數: %d\n", badRices.length);
 			
 			// 7. 進行分析
-			String keyword = "冠軍";
+			//String keyword = "冠軍";
+			String keywords[] = {"冠軍", "日本", "池上", "台東" , "壽司"};
 			Arrays.stream(badRices)
-				  .filter(badRice -> badRice.get品名().contains(keyword))
+				  //.filter(badRice -> badRice.get品名().contains(keyword))
+				  .filter(badRice -> Arrays.stream(keywords).anyMatch(kw -> badRice.get品名().contains(kw)))
 				  .forEach(badRice -> {
 					  // 換行符號: \n 或 \r\n
 					  System.out.printf("品名: %s 不合格原因: %s\n", badRice.get品名(), badRice.get不合格原因().replaceAll("\n", ""));
