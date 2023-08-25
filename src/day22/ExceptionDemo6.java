@@ -16,7 +16,7 @@ public class ExceptionDemo6 {
 				break;
 			} catch (LoginException e) {
 				//System.out.printf("錯誤訊息: %s\n", e.getMessage());
-				e.printErrorMessage();
+				e.printErrorMessage(); // 使用 LoginException 的自訂方法
 				continue;
 			}
 		}
@@ -43,7 +43,7 @@ public class ExceptionDemo6 {
 			System.out.println("登入成功");
 			play();
 		} else {
-			// 建立一個受檢例外
+			// 建立一個自定受檢例外 LoginException
 			throw new LoginException("登入失敗請重新登入");
 		}
 	}
