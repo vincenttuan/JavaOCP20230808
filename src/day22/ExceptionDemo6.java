@@ -42,6 +42,7 @@ public class ExceptionDemo6 {
 			System.out.println("登入成功");
 			play();
 		} else {
+			// 建立一個受檢例外
 			throw new Exception("登入失敗請重新登入");
 		}
 	}
