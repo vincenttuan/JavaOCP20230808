@@ -6,7 +6,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.Charset;
+import java.util.AbstractMap;
 import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
 
@@ -49,6 +52,14 @@ public class WebIODemo3 {
 					  System.out.printf("品名: %s 不合格原因: %s\n", badRice.get品名(), badRice.get不合格原因().replaceAll("\n", ""));
 				  });
 			
+			// 8. "冠軍", "日本", "池上", "台東" , "壽司" 各有幾筆不合格
+			Map<String, Long> keywordCounts = Arrays.stream(badRices)
+					.flatMap(badRice -> Arrays.stream(keywords)
+											  .filter(kw -> badRice.get品名().contains(kw))
+											  .map(kw -> new AbstractMap.SimpleEntry<>(kw, badRice)))
+					.collect(Collectors.groupingBy(Map.Entry::getKey, Collectors.counting()));
+			
+			System.out.println(keywordCounts);
 			
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
