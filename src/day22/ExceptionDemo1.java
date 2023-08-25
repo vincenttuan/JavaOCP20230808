@@ -9,7 +9,6 @@ public class ExceptionDemo1 {
 
 	public static void main(String[] args) {
 		login();
-		
 		System.out.println("Game Over");
 	}
 	
