@@ -14,7 +14,7 @@ public class ExceptionDemo6 {
 				login();
 				System.out.println("Game Over!");
 				break;
-			} catch (Exception e) {
+			} catch (LoginException e) {
 				System.out.printf("錯誤訊息: %s\n", e.getMessage());
 				continue;
 			}
@@ -36,14 +36,14 @@ public class ExceptionDemo6 {
 	}
 	
 	// 登入
-	public static void login() throws Exception {
+	public static void login() throws LoginException {
 		int userPwd = readInt("請輸入四位數密碼:");
 		if(userPwd == 1234) {
 			System.out.println("登入成功");
 			play();
 		} else {
 			// 建立一個受檢例外
-			throw new Exception("登入失敗請重新登入");
+			throw new LoginException("登入失敗請重新登入");
 		}
 	}
 	
