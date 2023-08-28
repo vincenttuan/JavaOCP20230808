@@ -3,6 +3,7 @@ package day25;
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;
 
+// 循環屏障範例
 public class Car extends Thread {
 	private CyclicBarrier cyclicBarrier;
 	
