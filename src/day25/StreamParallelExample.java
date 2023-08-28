@@ -5,7 +5,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 // 執行緒平行計算
-
+// 因為 parallelStream 執行時會有額外開銷
+// 若是數量不夠大計算不夠複雜就可能無法體驗到 parallelStream 的效果
 public class StreamParallelExample {
 
 	public static void main(String[] args) {
