@@ -9,7 +9,14 @@ public class CookieDemo {
 		Thread masterThread = new Thread() {
 			@Override
 			public void run() {
-				
+				for(int i=1;i<=10;i++) {
+					try {
+						cookie.put(i);
+						Thread.sleep(100); // 模擬主人放餅乾的時間
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
 			}
 		};
 		
@@ -17,7 +24,14 @@ public class CookieDemo {
 		Thread dogThread = new Thread() {
 			@Override
 			public void run() {
-				
+				for(int i=1;i<=10;i++) {
+					try {
+						cookie.eat(i);
+						Thread.sleep(150); // 模擬小狗吃餅乾的時間
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
 			}
 		};
 		
