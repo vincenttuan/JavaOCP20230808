@@ -19,5 +19,7 @@ public class ExecJob3 {
 		// 下達 start() 指令開始作業
 		t1.start();
 		
+		// 計算總共有幾條活著的執行緒
+		System.out.printf("Active 執行緒數量: %d\n", Thread.activeCount());
 	}
 }
