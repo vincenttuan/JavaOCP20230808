@@ -1,7 +1,12 @@
 package day24;
 
 // 印出奇數
-public class Odd {
+public class Odd implements Runnable {
+	
+	@Override
+	public void run() {
+		job();
+	}
 	
 	public void job() {
 		// 取得執行緒名稱
@@ -11,5 +16,6 @@ public class Odd {
 			System.out.printf("%s i=%d\n", threadName, i);
 		}
 	}
+
 	
 }

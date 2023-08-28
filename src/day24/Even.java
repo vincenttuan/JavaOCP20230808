@@ -1,7 +1,12 @@
 package day24;
 
 // 印出偶數
-public class Even {
+public class Even implements Runnable {
+	
+	@Override
+	public void run() {
+		job();
+	}
 	
 	public void job() {
 		// 取得執行緒名稱
