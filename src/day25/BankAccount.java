@@ -27,4 +27,14 @@ public class BankAccount {
 		System.out.printf("%s 查看目前餘額 $%d\n", threadName, balance);
 	}
 	
+	// 存款方法
+	public synchronized void deposit(int amount) {
+		String threadName = Thread.currentThread().getName();
+		if(amount > 0) {
+			for(int i=0;i<=100000000;i++); // 模擬花費時間
+			System.out.printf("%s 存款 $%d 成功\n", threadName, amount);
+			balance += amount; // 加上餘額
+		}
+	}
+	
 }
