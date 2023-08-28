@@ -10,7 +10,8 @@ class Father extends Thread {
 		worker.start();
 		
 		try {
-			worker.join();
+			//worker.join();
+			worker.join(6000);
 		} catch (InterruptedException e) {
 			// TODO: handle exception
 		}
@@ -25,8 +26,8 @@ class Worker extends Thread {
 		System.out.println("瓦斯工人準備送瓦斯");
 		for(int i=1;i<=5;i++) { // 模擬送瓦斯的時間
 			try {
-				sleep(1000);
 				System.out.print(i + "秒鐘 ");
+				sleep(1000);
 			} catch (InterruptedException e) {
 				
 			}
