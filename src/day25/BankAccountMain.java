@@ -17,9 +17,19 @@ public class BankAccountMain {
 			bankAccount.withdraw(300);
 		};
 		
+		Runnable deposit1 = () -> {
+			bankAccount.deposit(310);
+		};
+		
+		Runnable deposit2 = () -> {
+			bankAccount.deposit(460);
+		};
+		
 		new Thread(withdraw1).start();
+		new Thread(deposit1).start();
 		new Thread(withdraw2).start();
 		new Thread(withdraw3).start();
+		new Thread(deposit2).start();
 		
 	}
 
