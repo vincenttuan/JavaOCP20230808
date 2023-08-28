@@ -3,7 +3,8 @@ package day25;
 public class BankAccountMain {
 
 	public static void main(String[] args) {
-		BankAccount bankAccount = new BankAccount(1000);
+		//BankAccount bankAccount = new BankAccount(1000);
+		BankAccount2 bankAccount = new BankAccount2(1000);
 		
 		Runnable withdraw1 = () -> {
 			bankAccount.withdraw(500);
