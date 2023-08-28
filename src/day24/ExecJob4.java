@@ -11,7 +11,14 @@ public class ExecJob4 {
 		// 2.建立執行緒物件並賦予工作
 		// 預設的執行緒是 UserThread
 		Thread t1 = new Thread(odd); // 建立一個空的執行緒並賦予 odd 工作
-		Thread t2 = new Thread(even);
+		t1.setName("烏龜"); // 設定執行緒名稱
+		Thread t2 = new Thread(even, "兔子"); // 第二個參數可設定執行緒名稱
+		
+		// 3. 調整權限 (1~10, 預設是 5)
+		t1.setPriority(10); // Thread.MAX_PRIORITY
+		t2.setPriority(Thread.MIN_PRIORITY); // 1
+		System.out.printf("%s 的執行緒權限: %d\n", t1.getName(), t1.getPriority());
+		System.out.printf("%s 的執行緒權限: %d\n", t2.getName(), t2.getPriority());
 		
 		// 下達 start() 指令開始作業
 		t1.start();
