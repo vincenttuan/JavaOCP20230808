@@ -17,7 +17,13 @@ public interface MyFuncInterface {
 		return 2.0;
 	}
 	
+	// Java 8 開始提供
 	static void print() {
 		System.out.println("print");
+	}
+	
+	// 內部 interface
+	interface MyInner {
+		void bar();
 	}
 }
