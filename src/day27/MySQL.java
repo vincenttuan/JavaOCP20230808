@@ -15,6 +15,9 @@ import java.sql.DriverManager;
  * 
  * useUnicode=true：
  * 該參數指定是否使用Unicode字符集，這在多語言環境中非常重要。當與characterEncoding參數結合使用時，可以保證在客戶端和服務器之間正確傳輸並顯示所有的字符。
+ * 
+ * 連線參數官方文檔說明
+ * https://dev.mysql.com/doc/connector-j/8.1/en/connector-j-reference-configuration-properties.html
  * */
 public class MySQL {
 	private static Connection conn;
