@@ -4,12 +4,15 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CSVReader {
 	// CopyOnWriteArrayList 可以支援多執行緒(操作上不需要鎖,所以效率高)
 	private List<SaleRecord> records = new CopyOnWriteArrayList<>();
+	private String filePath = "src/day26/sales_data.csv";
+	private Path path = Paths.get(filePath);
 	
 	public List<SaleRecord> getSaleRecords() {
 		if(records.size() == 0) {
@@ -18,10 +21,32 @@ public class CSVReader {
 		return records;
 	}
 	
+	// 寫入檔案內容
+	private void writeSaleRecordToFile(SaleRecord saleRecord) {
+		try {
+			// 將 SaleRecord 物件轉成 CSV 格式
+			String line = "%s,%s,%s,%s,%s,%s";
+			line = String.format(line, 
+					saleRecord.getDate(),
+					saleRecord.getProduct(),
+					saleRecord.getPrice(),
+					saleRecord.getQuantity(),
+					saleRecord.getCity(),
+					saleRecord.getBranch());
+			
+			// 將 line 字串放到寫入文件的末尾
+			Files.write(path, (line + "\n").getBytes("utf-8"), StandardOpenOption.APPEND);
+			// 加入成功之後也順便將 records 新增
+			records.add(saleRecord);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	// 讀取檔案內容
 	private void readSaleRecordFromFile() {
-		String filePath = "src/day26/sales_data.csv";
-		Path path = Paths.get(filePath);
 		try {
 			List<String> lines = Files.readAllLines(path);
 			// 利用 for 將資料逐筆寫入到 SalesRecord 中
