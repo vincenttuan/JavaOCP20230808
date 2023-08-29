@@ -5,7 +5,7 @@ import java.util.List;
 public class CSVReaderTest {
 
 	public static void main(String[] args) {
-		CSVReader csvReader = new CSVReader();
+		CSVReader csvReader = CSVReader.getInstance();
 		
 		// 資料讀取
 		List<SaleRecord> records = csvReader.getSaleRecords();
@@ -14,9 +14,9 @@ public class CSVReaderTest {
 		
 		SaleRecord saleRecord = new SaleRecord();
 		saleRecord.setDate("2023-08-29");
-		saleRecord.setProduct("紅茶");
-		saleRecord.setPrice(30.0);
-		saleRecord.setQuantity(35);
+		saleRecord.setProduct("綠茶");
+		saleRecord.setPrice(32.0);
+		saleRecord.setQuantity(28);
 		saleRecord.setCity("台北");
 		saleRecord.setBranch("信義分店");
 		// 資料寫入

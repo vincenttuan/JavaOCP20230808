@@ -8,7 +8,20 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+// CSVReader 設計為單例模式(SingleTon)
 public class CSVReader {
+	// -- 單利模式下要寫的程序與方法 -----------------------------------
+	private static CSVReader _instance = new CSVReader();
+	
+	public static CSVReader getInstance() {
+		return _instance;
+	}
+	
+	private CSVReader() {
+		
+	}
+	// -----------------------------------------------------------
+	
 	// CopyOnWriteArrayList 可以支援多執行緒(操作上不需要鎖,所以效率高)
 	private List<SaleRecord> records = new CopyOnWriteArrayList<>();
 	private String filePath = "src/day26/sales_data.csv";
