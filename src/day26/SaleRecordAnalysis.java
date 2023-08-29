@@ -64,16 +64,6 @@ public class SaleRecordAnalysis {
 		
 		productSales.forEach((k, v) -> System.out.printf("%s 的總銷售金額: %,.1f\n", k, v));
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }
