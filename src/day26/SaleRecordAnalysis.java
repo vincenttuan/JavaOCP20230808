@@ -55,6 +55,7 @@ public class SaleRecordAnalysis {
 		System.out.printf("紅茶的總銷售金額: %,.1f\n", totalBlackTeaSales);
 		
 		System.out.println("------------------------------------------------");
+		
 		// 印出每一種商品的總銷售金額
 		Map<String, Double> productSales = records.stream()
 					.collect(groupingBy(
@@ -64,6 +65,16 @@ public class SaleRecordAnalysis {
 		
 		productSales.forEach((k, v) -> System.out.printf("%s 的總銷售金額: %,.1f\n", k, v));
 		
+		System.out.println("------------------------------------------------");
+		
+		// 印出每一家分店的銷售總金額
+		Map<String, Double> branchSales = records.stream()
+				.collect(groupingBy(
+						SaleRecord::getBranch,
+						summingDouble(record -> record.getPrice() * record.getQuantity())
+						));
+	
+		branchSales.forEach((k, v) -> System.out.printf("%s 的總銷售金額: %,.1f\n", k, v));
 	}
 
 }
