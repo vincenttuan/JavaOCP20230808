@@ -21,6 +21,10 @@ public class CSVReader {
 		return records;
 	}
 	
+	public void writeSaleRecord(SaleRecord saleRecord) {
+		writeSaleRecordToFile(saleRecord);
+	}
+	
 	// 寫入檔案內容
 	private void writeSaleRecordToFile(SaleRecord saleRecord) {
 		try {
