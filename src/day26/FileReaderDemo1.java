@@ -34,7 +34,10 @@ public class FileReaderDemo1 {
 			BufferedReader br = new BufferedReader(fr);
 			MyFile m = new MyFile();) {
 			
-			
+			String line; // 將每次逐行讀取的資料放到 line 中
+			while ((line = br.readLine()) != null) {
+				System.out.println(line);
+			}
 			
 		} catch (IOException e) {
 			e.printStackTrace();
