@@ -20,7 +20,7 @@ public class CSVReader {
 	
 	// 讀取檔案內容
 	private void readSaleRecordFromFile() {
-		String filePath = "sales_data.csv";
+		String filePath = "src/day26/sales_data.csv";
 		Path path = Paths.get(filePath);
 		try {
 			List<String> lines = Files.readAllLines(path);
