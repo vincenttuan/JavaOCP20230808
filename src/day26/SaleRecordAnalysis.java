@@ -73,8 +73,31 @@ public class SaleRecordAnalysis {
 						SaleRecord::getBranch,
 						summingDouble(record -> record.getPrice() * record.getQuantity())
 						));
-	
-		branchSales.forEach((k, v) -> System.out.printf("%s 的總銷售金額: %,.1f\n", k, v));
+		
+		//branchSales.forEach((k, v) -> System.out.printf("%s 的總銷售金額: %,.1f\n", k, v));
+		// 按照銷售金額由大到小排序
+		branchSales.entrySet().stream()
+					.sorted(Map.Entry.<String, Double>comparingByValue().reversed()) // 根據 Map 的 value 進行反排序
+					.forEach(entry -> System.out.printf("%s 的總銷售金額: %,.1f\n", entry.getKey(), entry.getValue()));
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
