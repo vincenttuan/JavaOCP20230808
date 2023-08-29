@@ -8,6 +8,7 @@ import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.toSet;
+import static java.util.stream.Collectors.summingDouble;
 
 public class SaleRecordAnalysis {
 
@@ -52,6 +53,27 @@ public class SaleRecordAnalysis {
 					.mapToDouble(record -> record.getPrice() * record.getQuantity()) //將售價與數量相乘
 					.sum(); // 將所有結果相加
 		System.out.printf("紅茶的總銷售金額: %,.1f\n", totalBlackTeaSales);
+		
+		System.out.println("------------------------------------------------");
+		// 印出每一種商品的總銷售金額
+		Map<String, Double> productSales = records.stream()
+					.collect(groupingBy(
+							SaleRecord::getProduct,
+							summingDouble(record -> record.getPrice() * record.getQuantity())
+							));
+		
+		productSales.forEach((k, v) -> System.out.printf("%s 的總銷售金額: %,.1f\n", k, v));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
