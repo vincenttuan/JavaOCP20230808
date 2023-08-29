@@ -46,30 +46,12 @@ public class SaleRecordAnalysis {
 		
 		cityToBranches.forEach((k, v) -> System.out.printf("%s: %s\n", k, v));
 		
-		
+		// 紅茶的總銷售金額
+		double totalBlackTeaSales = records.stream()
+					.filter(record -> record.getProduct().equals("紅茶")) // 過濾出紅茶的紀錄
+					.mapToDouble(record -> record.getPrice() * record.getQuantity()) //將售價與數量相乘
+					.sum(); // 將所有結果相加
+		System.out.printf("紅茶的總銷售金額: %,.1f\n", totalBlackTeaSales);
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
